@@ -16,7 +16,7 @@
             },
             "contributionsCollection": {
                 "contributionCalendar": {
-                    "totalContributions": 238,
+                    "totalContributions": 234,
                     "weeks": [
                         {
                             "contributionDays": [
@@ -2050,8 +2050,8 @@
                             "contributionDays": [
                                 {
                                     "date": "2026-08-02",
-                                    "contributionCount": 14,
-                                    "contributionLevel": "THIRD_QUARTILE"
+                                    "contributionCount": 10,
+                                    "contributionLevel": "SECOND_QUARTILE"
                                 }
                             ]
                         }
@@ -2073,7 +2073,7 @@
                         "languages": {
                             "edges": [
                                 {
-                                    "size": 121045,
+                                    "size": 96629,
                                     "node": {
                                         "name": "HTML",
                                         "color": "#e34c26"
@@ -2087,14 +2087,14 @@
                                     }
                                 },
                                 {
-                                    "size": 20950,
+                                    "size": 20975,
                                     "node": {
                                         "name": "JavaScript",
                                         "color": "#f1e05a"
                                     }
                                 },
                                 {
-                                    "size": 7447,
+                                    "size": 7826,
                                     "node": {
                                         "name": "Python",
                                         "color": "#3572A5"
@@ -2309,37 +2309,37 @@
             "languageBreakdown": [
                 {
                     "name": "HTML",
-                    "percentage": 45.58,
+                    "percentage": 40.01,
                     "color": "#e34c26"
                 },
                 {
                     "name": "Python",
-                    "percentage": 22.73,
+                    "percentage": 25.15,
                     "color": "#3572A5"
                 },
                 {
                     "name": "CSS",
-                    "percentage": 11.07,
+                    "percentage": 12.17,
                     "color": "#663399"
                 },
                 {
                     "name": "JavaScript",
-                    "percentage": 7.89,
+                    "percentage": 8.68,
                     "color": "#f1e05a"
                 },
                 {
                     "name": "Shell",
-                    "percentage": 6.95,
+                    "percentage": 7.65,
                     "color": "#89e051"
                 },
                 {
                     "name": "Java",
-                    "percentage": 5.58,
+                    "percentage": 6.14,
                     "color": "#b07219"
                 },
                 {
                     "name": "C++",
-                    "percentage": 0.19,
+                    "percentage": 0.21,
                     "color": "#f34b7d"
                 }
             ]
