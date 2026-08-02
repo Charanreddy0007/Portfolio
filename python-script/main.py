@@ -36,7 +36,7 @@ print("Done, LeetCode")
 
 leetcodedata = json.loads(response.content)
 
-with open ("../data/response.json", 'w') as f:
+with open (response_file, 'w') as f:
     json.dump(leetcodedata, f, indent=4)
 
 # ==================
@@ -95,7 +95,7 @@ language_breakdown.sort(key=lambda x: x["percentage"], reverse=True)
 githubdata["data"]["user"]["languageBreakdown"] = language_breakdown
 
 # Save everything
-with open("../data/gitresponse.json", "w") as f:
+with open(gitresponse_file, "w") as f:
     json.dump(githubdata, f, indent=4)
 
 print("Done, GitHub")
