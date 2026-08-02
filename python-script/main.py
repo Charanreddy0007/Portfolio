@@ -99,3 +99,53 @@ with open(gitresponse_file, "w") as f:
     json.dump(githubdata, f, indent=4)
 
 print("Done, GitHub")
+
+from xml.etree.ElementTree import Element, SubElement, ElementTree
+
+SVG_DIR = ROOT / "assets"
+SVG_DIR.mkdir(exist_ok=True)
+
+svg_file = SVG_DIR / "github_heatmap.svg"
+
+weeks = githubdata["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
+
+CELL = 12
+GAP = 4
+RX = 2
+
+WIDTH = len(weeks) * (CELL + GAP)
+HEIGHT = 7 * (CELL + GAP)
+
+colors = {
+    "NONE": "#30363d",
+    "FIRST_QUARTILE": "#126F5B",
+    "SECOND_QUARTILE": "#17b58b",
+    "THIRD_QUARTILE": "#20dba3",
+    "FOURTH_QUARTILE": "#2CF5B9",
+}
+
+svg = Element(
+    "svg",
+    xmlns="http://www.w3.org/2000/svg",
+    viewBox=f"0 0 {WIDTH} {HEIGHT}",
+    width=str(WIDTH),
+    height=str(HEIGHT),
+)
+
+for x, week in enumerate(weeks):
+    for y, day in enumerate(week["contributionDays"]):
+
+        SubElement(
+            svg,
+            "rect",
+            x=str(x * (CELL + GAP)),
+            y=str(y * (CELL + GAP)),
+            width=str(CELL),
+            height=str(CELL),
+            rx=str(RX),
+            fill=colors.get(day["contributionLevel"], "#222222"),
+        )
+
+ElementTree(svg).write(svg_file)
+
+print("Generated github_heatmap.svg")
