@@ -130,7 +130,7 @@ runTerminal();
 
 /* ---------- Dificulty --------- */
 
-fetch("response.json")
+fetch("data/response.json")
   .then(response => response.json())
   .then(data => {
 
@@ -256,7 +256,7 @@ function buildHeatmap(id, calendar) {
     }
 }
 
-fetch("response.json")
+fetch("data/response.json")
     .then(response => response.json())
     .then(data => {
 
@@ -295,7 +295,7 @@ function setRepo(repo, card) {
 }
 
 
-fetch("gitresponse.json")
+fetch("data/gitresponse.json")
     .then(response => response.json())
     .then(data => {
 
@@ -310,7 +310,7 @@ fetch("gitresponse.json")
     .catch(console.error);
 
 
-fetch("gitresponse.json")
+fetch("data/gitresponse.json")
   .then(response => response.json())
   .then(data => {
 
@@ -364,7 +364,7 @@ fetch("gitresponse.json")
   });
 
 
-fetch("gitresponse.json")
+fetch("data/gitresponse.json")
     .then(response => response.json())
     .then(data => {
 
