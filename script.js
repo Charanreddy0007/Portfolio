@@ -301,10 +301,15 @@ fetch("data/gitresponse.json")
 
         const repos = data.data.user.topRepositories.nodes;
 
-        setRepo(repos[0], 1);
-        setRepo(repos[3], 2);
-        setRepo(repos[5], 3);
-        setRepo(repos[6], 4);
+        const first = repos.find(repo => repo.name === "LeetCode-Sync");
+        const second = repos.find(repo => repo.name === "QR-File-Transfer-System");
+        const third = repos.find(repo => repo.name === "Multi-Threaded_Port_Scanner");
+        const fourth = repos.find(repo => repo.name === "Python-Keystroke-Logger-Educational-Project-");
+
+        setRepo(first, 1);
+        setRepo(second, 2);
+        setRepo(third, 3);
+        setRepo(fourth, 4);
 
     })
     .catch(console.error);

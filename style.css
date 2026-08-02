@@ -437,3 +437,10 @@ a:focus-visible, button:focus-visible, input:focus-visible{ outline:2px solid va
     color:inherit;
 }
 
+
+.github-heatmap-svg{
+    display:block;
+    width:100%;
+    height:auto;
+    margin-top:16px;
+}
