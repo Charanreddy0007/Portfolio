@@ -1,0 +1,92 @@
+{
+    "data": {
+        "allQuestionsCount": [
+            {
+                "difficulty": "All",
+                "count": 4013
+            },
+            {
+                "difficulty": "Easy",
+                "count": 958
+            },
+            {
+                "difficulty": "Medium",
+                "count": 2095
+            },
+            {
+                "difficulty": "Hard",
+                "count": 960
+            }
+        ],
+        "matchedUser": {
+            "username": "Charanreddy0007",
+            "contributions": {
+                "points": 183,
+                "questionCount": 0,
+                "testcaseCount": 0
+            },
+            "profile": {
+                "realName": "Charan Reddy",
+                "userAvatar": "https://assets.leetcode.com/users/Charan_reddy_07/avatar_1784276231.png",
+                "ranking": 2818822
+            },
+            "badges": [],
+            "activeBadge": null,
+            "submitStats": {
+                "totalSubmissionNum": [
+                    {
+                        "difficulty": "All",
+                        "count": 50,
+                        "submissions": 117
+                    },
+                    {
+                        "difficulty": "Easy",
+                        "count": 40,
+                        "submissions": 91
+                    },
+                    {
+                        "difficulty": "Medium",
+                        "count": 7,
+                        "submissions": 21
+                    },
+                    {
+                        "difficulty": "Hard",
+                        "count": 3,
+                        "submissions": 5
+                    }
+                ],
+                "acSubmissionNum": [
+                    {
+                        "difficulty": "All",
+                        "count": 46,
+                        "submissions": 76
+                    },
+                    {
+                        "difficulty": "Easy",
+                        "count": 38,
+                        "submissions": 67
+                    },
+                    {
+                        "difficulty": "Medium",
+                        "count": 7,
+                        "submissions": 8
+                    },
+                    {
+                        "difficulty": "Hard",
+                        "count": 1,
+                        "submissions": 1
+                    }
+                ]
+            },
+            "userCalendar": {
+                "activeYears": [
+                    2025,
+                    2026
+                ],
+                "streak": 17,
+                "totalActiveDays": 29
+            },
+            "submissionCalendar": "{\"1780531200\": 4, \"1780617600\": 9, \"1780704000\": 10, \"1781136000\": 6, \"1781222400\": 4, \"1781308800\": 2, \"1781481600\": 2, \"1781827200\": 7, \"1781913600\": 1, \"1782000000\": 4, \"1782172800\": 2, \"1782345600\": 1, \"1784160000\": 6, \"1784246400\": 2, \"1784332800\": 3, \"1784419200\": 1, \"1784505600\": 2, \"1784592000\": 1, \"1784678400\": 7, \"1784764800\": 6, \"1784851200\": 2, \"1784937600\": 7, \"1785024000\": 10, \"1785110400\": 3, \"1785196800\": 2, \"1785283200\": 4, \"1785369600\": 3, \"1785456000\": 1, \"1785542400\": 1}"
+        }
+    }
+}

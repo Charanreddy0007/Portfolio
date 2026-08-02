@@ -1,0 +1,357 @@
+<article class="prose max-w-none">
+
+<h1>Understanding the TCP/IP Protocol Suite</h1>
+
+<p>
+Whenever you open a website, send an email, or stream a video, your data passes
+through multiple networking layers before reaching its destination. The TCP/IP
+model defines how devices communicate across networks by dividing communication
+into four major layers, each with a specific responsibility.
+</p>
+
+<hr>
+
+<h2>The TCP/IP Model</h2>
+
+<p>
+Each layer performs a different task. Data starts at the application layer,
+travels down to the physical medium, crosses the network, and then moves back
+up the layers on the receiving device.
+</p>
+
+<pre><code>
+Application Layer
+        │
+        ▼
+Transport Layer
+        │
+        ▼
+Network Layer
+        │
+        ▼
+Data Link Layer
+        │
+        ▼
+Physical Layer
+</code></pre>
+
+<hr>
+
+<h2>Application Layer</h2>
+
+<p>
+The Application Layer is the closest layer to the user. It provides network
+services to applications such as web browsers, email clients, and file transfer
+programs.
+</p>
+
+<p>Common protocols include:</p>
+
+<ul>
+<li>HTTP / HTTPS</li>
+<li>DNS</li>
+<li>DHCP</li>
+<li>FTP</li>
+<li>SMTP</li>
+<li>POP3</li>
+<li>IMAP</li>
+<li>IRC</li>
+</ul>
+
+<p>
+For example, when you visit a website, your browser communicates using
+HTTP or HTTPS. Before the connection is established, DNS translates the domain
+name into an IP address.
+</p>
+
+<hr>
+
+<h2>Transport Layer</h2>
+
+<p>
+The Transport Layer is responsible for delivering data between applications.
+It receives data from the Application Layer and prepares it for transmission
+using either TCP or UDP.
+</p>
+
+<hr>
+
+<h3>Transmission Control Protocol (TCP)</h3>
+
+<p>
+TCP is a connection-oriented protocol designed for reliable communication.
+Large messages are divided into smaller segments before being transmitted.
+</p>
+
+<h4>Three-Way Handshake</h4>
+
+<p>
+Before any data is exchanged, TCP establishes a connection using a
+three-way handshake.
+</p>
+
+<pre><code>
+Client
+   │
+SYN
+   │
+   ▼
+Server
+   ▲
+SYN + ACK
+   │
+ACK
+   │
+Connection Established
+</code></pre>
+
+<hr>
+
+<h3>Reliable Data Transfer</h3>
+
+<p>
+TCP guarantees reliable communication by providing several important features.
+</p>
+
+<ul>
+<li>Error detection using checksums.</li>
+<li>Sequence numbers for ordered delivery.</li>
+<li>Retransmission of lost segments.</li>
+<li>Duplicate packet detection.</li>
+<li>Flow control and congestion control.</li>
+</ul>
+
+<hr>
+
+<h3>Error Detection</h3>
+
+<p>
+Each TCP segment contains a checksum. The receiver calculates its own checksum
+and compares it with the received value. If the values don't match, the packet
+is discarded and retransmitted.
+</p>
+
+<hr>
+
+<h3>Ordered Delivery</h3>
+
+<p>
+Every TCP segment includes a sequence number. Even if packets arrive out of
+order, the receiver rearranges them before passing the data to the application.
+</p>
+
+<hr>
+
+<h3>Retransmission</h3>
+
+<p>
+Whenever a receiver successfully receives a TCP segment, it sends back an
+acknowledgment (ACK). If the sender doesn't receive the ACK before a timeout,
+the segment is transmitted again.
+</p>
+
+<hr>
+
+<h3>Flow Control</h3>
+
+<p>
+TCP automatically adjusts its transmission speed based on network conditions.
+If packet loss increases, the sender slows down transmission to reduce
+congestion.
+</p>
+
+<hr>
+
+<h3>Connection Termination</h3>
+
+<p>
+When communication is complete, TCP closes the connection using a four-step
+termination process.
+</p>
+
+<pre><code>
+FIN
+ACK
+FIN
+ACK
+</code></pre>
+
+<hr>
+
+<h2>User Datagram Protocol (UDP)</h2>
+
+<p>
+Unlike TCP, UDP is connectionless and does not guarantee delivery.
+It sends packets without waiting for acknowledgments, making it much faster.
+</p>
+
+<p>UDP is commonly used for:</p>
+
+<ul>
+<li>DNS</li>
+<li>DHCP</li>
+<li>SNMP</li>
+<li>RIP</li>
+<li>Online gaming</li>
+<li>Voice and video streaming</li>
+</ul>
+
+<hr>
+
+<h2>TCP vs UDP</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Reliable</td>
+<td>Best effort</td>
+</tr>
+
+<tr>
+<td>Connection-oriented</td>
+<td>Connectionless</td>
+</tr>
+
+<tr>
+<td>Ordered delivery</td>
+<td>No ordering</td>
+</tr>
+
+<tr>
+<td>Error recovery</td>
+<td>No recovery</td>
+</tr>
+
+<tr>
+<td>Slower</td>
+<td>Faster</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h2>Network Layer</h2>
+
+<p>
+The Network Layer is responsible for moving packets between different
+networks. It adds logical IP addresses and determines the best route
+to the destination.
+</p>
+
+<h3>Logical Addressing</h3>
+
+<p>
+Every packet contains the source and destination IP addresses, allowing routers
+to identify where the packet should travel.
+</p>
+
+<h3>Routing</h3>
+
+<p>
+Routers forward packets between networks until they reach the destination.
+If both devices are on the same local network, routing isn't required.
+</p>
+
+<h3>Path Determination</h3>
+
+<p>
+Routing protocols such as OSPF, BGP, and IS-IS help routers choose the most
+efficient path across the Internet.
+</p>
+
+<hr>
+
+<h2>Data Link Layer</h2>
+
+<p>
+The Data Link Layer prepares packets for transmission across the local network.
+It is divided into two sublayers.
+</p>
+
+<h3>MAC (Media Access Control)</h3>
+
+<ul>
+<li>Frame encapsulation</li>
+<li>Source and destination MAC addresses</li>
+<li>Error detection using a trailer</li>
+<li>Media access (CSMA/CD)</li>
+</ul>
+
+<h3>LLC (Logical Link Control)</h3>
+
+<ul>
+<li>Flow control</li>
+<li>Error control</li>
+<li>Packet sizing</li>
+</ul>
+
+<hr>
+
+<h2>Physical Layer</h2>
+
+<p>
+The Physical Layer converts digital data into electrical, optical, or radio
+signals that travel across cables or wireless media.
+</p>
+
+<p>
+This is the only layer that actually transmits bits over the physical network.
+</p>
+
+<hr>
+
+<h2>How Data Travels</h2>
+
+<pre><code>
+Browser
+   │
+Application Layer
+   │
+Transport Layer (TCP)
+   │
+Network Layer (IP)
+   │
+Data Link Layer (Ethernet)
+   │
+Physical Layer
+═══════════════════════════════
+Internet
+═══════════════════════════════
+Physical Layer
+   │
+Data Link Layer
+   │
+Network Layer
+   │
+Transport Layer
+   │
+Application Layer
+   │
+Server
+</code></pre>
+
+<hr>
+
+<h2>Summary</h2>
+
+<ul>
+<li>The Application Layer provides network services to user applications.</li>
+<li>The Transport Layer delivers data using TCP or UDP.</li>
+<li>The Network Layer routes packets using IP addresses.</li>
+<li>The Data Link Layer handles local network communication using MAC addresses.</li>
+<li>The Physical Layer transmits data as electrical, optical, or wireless signals.</li>
+</ul>
+
+</article>
