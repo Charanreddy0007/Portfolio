@@ -6,6 +6,14 @@ from collections import defaultdict
 from dotenv import load_dotenv
 import config
 
+from pathlib import Path
+import os
+
+print("Current working directory:", os.getcwd())
+print("Script location:", Path(__file__).resolve())
+print("Looking for:", Path("../data").resolve())
+print("Data exists:", Path("../data").exists())
+
 load_dotenv()
 
 
