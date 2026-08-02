@@ -1,0 +1,449 @@
+<h1>Linux File System Structure</h1>
+
+<p>
+Linux organizes everything under a single directory tree that begins with the
+<strong>root directory (/)</strong>. Unlike Windows, which uses drive letters such as
+<code>C:</code> or <code>D:</code>, Linux stores every file and directory under this single hierarchy.
+Understanding these directories is essential for system administration and troubleshooting.
+</p>
+
+<hr>
+
+<h2>Linux Directory Tree</h2>
+
+<img src="Linux_File.png" alt="Linux File System Structure">
+
+<hr>
+
+<h2>Root Directory (/)</h2>
+
+<p>
+The <code>/</code> directory is the highest level of the Linux file system.
+Every other directory is located somewhere beneath it.
+</p>
+
+<pre><code>/
+├── bin
+├── boot
+├── dev
+├── etc
+├── home
+├── lib
+├── media
+├── mnt
+├── opt
+├── proc
+├── root
+├── run
+├── sbin
+├── sys
+├── tmp
+├── usr
+└── var
+</code></pre>
+
+<hr>
+
+<h2>/bin — Essential User Commands</h2>
+
+<p>
+The <code>/bin</code> directory contains essential command-line utilities required for basic system operation.
+These commands are available to all users.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>ls</code></td>
+<td>List files and directories.</td>
+</tr>
+
+<tr>
+<td><code>cp</code></td>
+<td>Copy files.</td>
+</tr>
+
+<tr>
+<td><code>mv</code></td>
+<td>Move or rename files.</td>
+</tr>
+
+<tr>
+<td><code>cat</code></td>
+<td>Display file contents.</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2>/sbin — System Binaries</h2>
+
+<p>
+Contains administrative commands mainly used by the system administrator (root).
+These commands are responsible for system maintenance and configuration.
+</p>
+
+<pre><code>fdisk
+reboot
+iptables
+fsck
+</code></pre>
+
+<hr>
+
+<h2>/etc — Configuration Files</h2>
+
+<p>
+Stores system-wide configuration files used by the operating system and installed applications.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>/etc/passwd</code></td>
+<td>User account information.</td>
+</tr>
+
+<tr>
+<td><code>/etc/hosts</code></td>
+<td>Hostname mappings.</td>
+</tr>
+
+<tr>
+<td><code>/etc/fstab</code></td>
+<td>Filesystem mount configuration.</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2>/home — User Home Directories</h2>
+
+<p>
+Every regular user has a personal directory inside <code>/home</code>.
+Personal files such as documents, downloads, and projects are stored here.
+</p>
+
+<pre><code>/home
+├── alice
+├── bob
+└── john
+</code></pre>
+
+<hr>
+
+<h2>/root — Root User Home</h2>
+
+<p>
+The administrator (root) has a separate home directory located at <code>/root</code>.
+Only the root user normally has access to this directory.
+</p>
+
+<hr>
+
+<h2>/var — Variable Data</h2>
+
+<p>
+Stores files that change frequently while the system is running.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Purpose</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>/var/log</code></td>
+<td>System logs.</td>
+</tr>
+
+<tr>
+<td><code>/var/cache</code></td>
+<td>Application cache.</td>
+</tr>
+
+<tr>
+<td><code>/var/spool</code></td>
+<td>Queued print jobs and mail.</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2>/tmp — Temporary Files</h2>
+
+<p>
+Applications store temporary files in this directory.
+Most Linux distributions automatically remove these files after a reboot.
+</p>
+
+<hr>
+
+<h2>/usr — User Programs</h2>
+
+<p>
+Contains most user applications, libraries, documentation, and shared resources.
+It is one of the largest directories in Linux.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Purpose</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>/usr/bin</code></td>
+<td>User applications.</td>
+</tr>
+
+<tr>
+<td><code>/usr/lib</code></td>
+<td>Shared libraries.</td>
+</tr>
+
+<tr>
+<td><code>/usr/share</code></td>
+<td>Documentation, icons, fonts.</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2>/lib and /lib64 — Shared Libraries</h2>
+
+<p>
+These directories contain shared libraries required by system programs.
+They are similar to DLL files in Microsoft Windows.
+</p>
+
+<hr>
+
+<h2>/dev — Device Files</h2>
+
+<p>
+Linux represents hardware devices as files.
+Applications communicate with hardware by reading from and writing to these device files.
+</p>
+
+<pre><code>/dev/sda      Hard disk
+/dev/sdb      Second disk
+/dev/tty      Terminal
+/dev/null     Discards data
+</code></pre>
+
+<hr>
+
+<h2>/proc — Process Information</h2>
+
+<p>
+A virtual filesystem that provides information about running processes and kernel status.
+The files are generated dynamically by the kernel.
+</p>
+
+<pre><code>/proc/cpuinfo
+/proc/meminfo
+/proc/version
+</code></pre>
+
+<hr>
+
+<h2>/sys — System Information</h2>
+
+<p>
+Provides information about devices, drivers, and kernel components.
+System administrators often use this directory to inspect hardware.
+</p>
+
+<hr>
+
+<h2>/boot — Boot Files</h2>
+
+<p>
+Contains everything required to start the Linux operating system.
+</p>
+
+<pre><code>Kernel
+GRUB Bootloader
+Initial RAM Disk (initramfs)
+</code></pre>
+
+<hr>
+
+<h2>/mnt — Mount Point</h2>
+
+<p>
+Used as a temporary location for manually mounting storage devices.
+</p>
+
+<pre><code>sudo mount /dev/sdb1 /mnt
+</code></pre>
+
+<hr>
+
+<h2>/media — Removable Devices</h2>
+
+<p>
+Automatically mounted USB drives, DVDs, and external storage devices appear here.
+</p>
+
+<pre><code>/media/username/USB
+</code></pre>
+
+<hr>
+
+<h2>/opt — Optional Software</h2>
+
+<p>
+Third-party software packages are commonly installed inside this directory.
+</p>
+
+<pre><code>/opt/google
+/opt/zoom
+</code></pre>
+
+<hr>
+
+<h2>/run — Runtime Information</h2>
+
+<p>
+Stores temporary runtime information such as process IDs, sockets, and lock files.
+Its contents are recreated after every reboot.
+</p>
+
+<hr>
+
+<h2>Important Linux Concepts</h2>
+
+<h3>Inode</h3>
+
+<p>
+An inode stores metadata about a file, including its size, owner, permissions, and timestamps.
+The filename itself is <strong>not</strong> stored inside the inode.
+</p>
+
+<pre><code>Inode contains:
+• Owner
+• Permissions
+• Size
+• Timestamps
+• Disk block locations
+</code></pre>
+
+<hr>
+
+<h3>File Permissions</h3>
+
+<p>
+Linux controls file access using read, write, and execute permissions.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>r</code></td>
+<td>Read</td>
+</tr>
+
+<tr>
+<td><code>w</code></td>
+<td>Write</td>
+</tr>
+
+<tr>
+<td><code>x</code></td>
+<td>Execute</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>chmod 755 script.sh
+chmod 644 notes.txt
+</code></pre>
+
+<hr>
+
+<h3>Mounting</h3>
+
+<p>
+Mounting is the process of attaching a storage device to a directory within the Linux filesystem.
+After mounting, the files on that device become accessible.
+</p>
+
+<pre><code>sudo mount /dev/sdb1 /mnt
+</code></pre>
+
+<hr>
+
+<h3>Journaling</h3>
+
+<p>
+Modern Linux filesystems such as ext4 maintain a journal that records filesystem changes before they are written to disk.
+This greatly improves recovery after unexpected shutdowns or power failures.
+</p>
+
+<hr>
+
+<h2>Summary</h2>
+
+<table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Purpose</th>
+</tr>
+</thead>
+
+<tbody>
+<tr><td><code>/</code></td><td>Root of the filesystem</td></tr>
+<tr><td><code>/bin</code></td><td>Essential user commands</td></tr>
+<tr><td><code>/sbin</code></td><td>System administration commands</td></tr>
+<tr><td><code>/etc</code></td><td>Configuration files</td></tr>
+<tr><td><code>/home</code></td><td>User directories</td></tr>
+<tr><td><code>/root</code></td><td>Administrator home</td></tr>
+<tr><td><code>/var</code></td><td>Variable system data</td></tr>
+<tr><td><code>/tmp</code></td><td>Temporary files</td></tr>
+<tr><td><code>/usr</code></td><td>User programs and utilities</td></tr>
+<tr><td><code>/lib</code></td><td>Shared libraries</td></tr>
+<tr><td><code>/dev</code></td><td>Device files</td></tr>
+<tr><td><code>/proc</code></td><td>Process information</td></tr>
+<tr><td><code>/sys</code></td><td>Kernel and hardware information</td></tr>
+<tr><td><code>/boot</code></td><td>Boot files</td></tr>
+<tr><td><code>/mnt</code></td><td>Manual mount point</td></tr>
+<tr><td><code>/media</code></td><td>Removable media</td></tr>
+<tr><td><code>/opt</code></td><td>Optional software</td></tr>
+<tr><td><code>/run</code></td><td>Runtime system data</td></tr>
+</tbody>
+</table>

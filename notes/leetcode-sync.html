@@ -1,0 +1,274 @@
+<article class="prose max-w-none">
+
+<h1>How I Built LeetCode Sync</h1>
+
+<p>
+Maintaining a LeetCode GitHub repository manually quickly became repetitive.
+Every accepted problem required copying the solution, creating folders,
+updating README files, committing the changes, and pushing everything to GitHub.
+To eliminate that workflow, I built <strong>LeetCode Sync</strong>—an automation
+tool that incrementally synchronizes accepted LeetCode solutions while keeping
+track of progress using SQLite.
+</p>
+
+<hr>
+
+<h2>The Problem</h2>
+
+<p>
+Solving problems was the easy part. Keeping the GitHub repository organized
+wasn't.
+</p>
+
+<ul>
+<li>Copy solution manually</li>
+<li>Create folder structure</li>
+<li>Generate README files</li>
+<li>Commit changes</li>
+<li>Push to GitHub</li>
+</ul>
+
+<p>
+Repeating these steps for every accepted submission quickly became tedious,
+so I decided to automate the entire workflow.
+</p>
+
+<hr>
+
+<h2>Project Goal</h2>
+
+<p>
+The goal was to build a synchronization pipeline that automatically detects
+new accepted LeetCode submissions, downloads all required metadata,
+generates documentation, uploads everything to GitHub, and safely resumes
+if the process is interrupted.
+</p>
+
+<hr>
+
+<h2>Key Features</h2>
+
+<ul>
+<li>Incremental synchronization</li>
+<li>LeetCode GraphQL integration</li>
+<li>GitHub REST API integration</li>
+<li>SQLite state management</li>
+<li>Automatic README generation</li>
+<li>Resume after interruption</li>
+<li>Retry failed operations</li>
+<li>GitHub Actions automation</li>
+<li>SHA tracking for updates</li>
+</ul>
+
+<hr>
+
+<h2>System Architecture</h2>
+
+<p>
+The synchronization process follows a staged pipeline.
+Each stage stores its progress in SQLite before moving to the next step,
+making the system resilient to failures.
+</p>
+
+<pre><code>
+LeetCode
+      │
+      ▼
+ GraphQL API
+      │
+      ▼
+ SQLite
+      │
+      ▼
+ README Generator
+      │
+      ▼
+ GitHub REST API
+      │
+      ▼
+ GitHub Repository
+</code></pre>
+
+<hr>
+
+<h2>Synchronization Pipeline</h2>
+
+<p>
+Instead of uploading everything at once, the project processes each problem
+through several well-defined stages.
+</p>
+
+<ol>
+<li>Fetch solved problems</li>
+<li>Download submission details</li>
+<li>Retrieve source code</li>
+<li>Fetch question metadata</li>
+<li>Generate problem README</li>
+<li>Upload problem to GitHub</li>
+<li>Upload solution</li>
+<li>Update root README</li>
+</ol>
+
+<hr>
+
+<h2>State Management with SQLite</h2>
+
+<p>
+Every synchronization stage updates a status value inside SQLite.
+If the workflow stops unexpectedly, it resumes from the last completed stage
+instead of starting over.
+</p>
+
+<pre><code>
+Status 1 → Problem Information
+
+Status 2 → Submission Details
+
+Status 3 → Source Code
+
+Status 4 → Question Data
+
+Status 5 → Upload README
+
+Status 6 → Upload Solution
+
+Status 7 → Update Repository README
+</code></pre>
+
+<hr>
+
+<h2>Failure Recovery</h2>
+
+<p>
+Reliability was one of the primary design goals.
+Whenever an API request fails, the project records the error,
+increments a retry counter, and exits safely.
+The next scheduled execution continues from the last successful checkpoint.
+</p>
+
+<pre><code>
+SQLite
+   │
+Pending Problem
+   │
+   ▼
+Execute Stage
+   │
+ ┌───────┐
+ │       │
+ ▼       ▼
+Success Failure
+ │        │
+ │     Retry++
+ ▼        │
+Next Stage
+</code></pre>
+
+<hr>
+
+<h2>GitHub Actions Automation</h2>
+
+<p>
+GitHub Actions runs the synchronization process automatically every few hours.
+Each execution processes exactly one pending problem before exiting.
+</p>
+
+<p>
+This design keeps workflows short, minimizes API usage,
+and greatly simplifies recovery after failures.
+</p>
+
+<hr>
+
+<h2>Technology Stack</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Technology</th>
+<th>Purpose</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Python</td>
+<td>Core application logic</td>
+</tr>
+
+<tr>
+<td>SQLite</td>
+<td>Synchronization state</td>
+</tr>
+
+<tr>
+<td>GraphQL</td>
+<td>Fetch LeetCode data</td>
+</tr>
+
+<tr>
+<td>GitHub REST API</td>
+<td>Repository synchronization</td>
+</tr>
+
+<tr>
+<td>GitHub Actions</td>
+<td>Automation</td>
+</tr>
+
+<tr>
+<td>Markdown</td>
+<td>README generation</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h2>Project Structure</h2>
+
+<pre><code>
+LeetCode Sync/
+
+├── database/
+├── github/
+├── leetcode/
+├── main.py
+├── config.py
+├── utils.py
+└── README.md
+</code></pre>
+
+<hr>
+
+<h2>What I Learned</h2>
+
+<p>
+This project taught me much more than simply interacting with APIs.
+It demonstrated how state machines, incremental synchronization,
+database persistence, retry mechanisms, and workflow automation
+can be combined to build a reliable production-style system.
+</p>
+
+<p>
+Most importantly, I learned that reliable automation isn't just about
+making things automatic—it's about making them recoverable when something
+goes wrong.
+</p>
+
+<hr>
+
+<h2>Conclusion</h2>
+
+<p>
+LeetCode Sync transformed a repetitive manual process into a fully automated
+pipeline. By combining GraphQL, SQLite, GitHub REST APIs, and GitHub Actions,
+the project continuously synchronizes accepted LeetCode solutions while
+maintaining consistency and recovering gracefully from interruptions.
+</p>
+
+</article>

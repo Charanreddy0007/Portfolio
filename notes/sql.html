@@ -1,0 +1,2590 @@
+<h1>MySQL Database Fundamentals</h1>
+
+<p>
+MySQL is a relational database management system (RDBMS) used to store, organize,
+and retrieve data efficiently. Before storing data, a database must be created,
+selected, and structured into tables.
+</p>
+
+<hr>
+
+<h2>Creating a Database</h2>
+
+<p>
+The <code>CREATE DATABASE</code> statement creates a new database with the specified name.
+</p>
+
+<pre><code class="language-sql">CREATE DATABASE databaseName;
+</code></pre>
+
+<p>
+Once executed successfully, MySQL creates an empty database ready for storing tables.
+</p>
+
+<hr>
+
+<h2>Deleting a Database</h2>
+
+<p>
+The <code>DROP DATABASE</code> statement permanently removes an entire database,
+including every table and all stored data.
+</p>
+
+<pre><code class="language-sql">DROP DATABASE databaseName;
+</code></pre>
+
+<p>
+Use this command carefully because deleted databases cannot be recovered.
+</p>
+
+<hr>
+
+<h2>Selecting a Database</h2>
+
+<p>
+Before creating tables or inserting records, you must select the database you
+want to work with.
+</p>
+
+<pre><code class="language-sql">USE databaseName;
+</code></pre>
+
+<hr>
+
+<h2>Creating a Table</h2>
+
+<p>
+Tables store data in rows and columns. Every column has a name, data type,
+and optional constraints.
+</p>
+
+<pre><code class="language-sql">CREATE TABLE table_name (
+
+    column_name1 datatype constraint,
+
+    column_name2 datatype constraint,
+
+    column_name3 datatype constraint
+
+);
+</code></pre>
+
+<h3>Example</h3>
+
+<pre><code class="language-sql">CREATE TABLE student (
+
+    id INT PRIMARY KEY,
+
+    name VARCHAR(50),
+
+    age INT NOT NULL
+
+);
+</code></pre>
+
+<hr>
+
+<h2>Common Data Types</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><code>INT</code></td>
+<td>Integer numbers.</td>
+</tr>
+
+<tr>
+<td><code>VARCHAR(n)</code></td>
+<td>Variable length text.</td>
+</tr>
+
+<tr>
+<td><code>CHAR(n)</code></td>
+<td>Fixed length text.</td>
+</tr>
+
+<tr>
+<td><code>DATE</code></td>
+<td>Date value.</td>
+</tr>
+
+<tr>
+<td><code>FLOAT</code></td>
+<td>Decimal numbers.</td>
+</tr>
+
+<tr>
+<td><code>BOOLEAN</code></td>
+<td>True or False.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h2>Inserting Records</h2>
+
+<p>
+The <code>INSERT INTO</code> statement adds new rows into a table.
+</p>
+
+<pre><code class="language-sql">INSERT INTO table_name
+VALUES(column1,column2,column3);
+</code></pre>
+
+<h3>Example</h3>
+
+<pre><code class="language-sql">INSERT INTO student
+(rollno,name)
+
+VALUES
+
+(1,"Ajay"),
+(2,"Vijay"),
+(3,"Karan");
+</code></pre>
+
+<hr>
+
+<h2>Viewing Data</h2>
+
+<p>
+Use the <code>SELECT</code> statement to retrieve data from a table.
+</p>
+
+<pre><code class="language-sql">SELECT * FROM table_name;
+</code></pre>
+
+<p>
+The <code>*</code> symbol means "select every column".
+</p>
+
+<hr>
+
+<h2>Example Student Table</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Roll No</th>
+<th>Name</th>
+<th>Age</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>Ajay</td>
+<td>18</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Vijay</td>
+<td>19</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Karan</td>
+<td>20</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h1>Keys</h1>
+
+<p>
+Keys uniquely identify records and establish relationships between tables.
+</p>
+
+<hr>
+
+<h2>Primary Key</h2>
+
+<p>
+A <strong>Primary Key</strong> uniquely identifies every row in a table.
+Only one primary key can exist in a table, and it cannot contain NULL values.
+</p>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Unique</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>NULL Allowed</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>Per Table</td>
+<td>One</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<h3>Example</h3>
+
+<pre><code class="language-sql">CREATE TABLE student(
+
+    id INT PRIMARY KEY,
+
+    name VARCHAR(50)
+
+);
+</code></pre>
+
+<hr>
+
+<h2>Foreign Key</h2>
+
+<p>
+A <strong>Foreign Key</strong> links one table to another by referencing
+the primary key of another table.
+</p>
+
+<p>
+Unlike primary keys, foreign keys may contain duplicate values and NULL values.
+</p>
+
+<h3>Example</h3>
+
+<pre><code class="language-sql">CREATE TABLE orders(
+
+    order_id INT PRIMARY KEY,
+
+    customer_id INT,
+
+    FOREIGN KEY(customer_id)
+    REFERENCES customer(id)
+
+);
+</code></pre>
+
+<hr>
+
+<h2>Primary Key vs Foreign Key</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Feature</th>
+<th>Primary Key</th>
+<th>Foreign Key</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Unique</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>NULL Allowed</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>Duplicates</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>Purpose</td>
+<td>Identify a row</td>
+<td>Link tables</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h1>SQL Constraints</h1>
+
+<p>
+Constraints define rules that control what data can be stored in a table.
+</p>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Constraint</th>
+<th>Purpose</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><code>NOT NULL</code></td>
+<td>Column cannot contain NULL values.</td>
+</tr>
+
+<tr>
+<td><code>UNIQUE</code></td>
+<td>Every value must be different.</td>
+</tr>
+
+<tr>
+<td><code>PRIMARY KEY</code></td>
+<td>Unique identifier.</td>
+</tr>
+
+<tr>
+<td><code>FOREIGN KEY</code></td>
+<td>Links two tables.</td>
+</tr>
+
+<tr>
+<td><code>DEFAULT</code></td>
+<td>Assigns a default value.</td>
+</tr>
+
+<tr>
+<td><code>CHECK</code></td>
+<td>Limits allowed values.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h2>NOT NULL</h2>
+
+<pre><code class="language-sql">name VARCHAR(50) NOT NULL
+</code></pre>
+
+<p>
+The column must always contain a value.
+</p>
+
+<hr>
+
+<h2>UNIQUE</h2>
+
+<pre><code class="language-sql">email VARCHAR(100) UNIQUE
+</code></pre>
+
+<p>
+Duplicate values are not allowed.
+</p>
+
+<hr>
+
+<h2>PRIMARY KEY</h2>
+
+<pre><code class="language-sql">CREATE TABLE temp(
+
+    id INT,
+
+    PRIMARY KEY(id)
+
+);
+</code></pre>
+
+<hr>
+
+<h2>FOREIGN KEY</h2>
+
+<pre><code class="language-sql">CREATE TABLE temp1(
+
+    cust_id INT,
+
+    FOREIGN KEY(cust_id)
+    REFERENCES customer(id)
+
+);
+</code></pre>
+
+<hr>
+
+<h2>DEFAULT</h2>
+
+<pre><code class="language-sql">salary INT DEFAULT 25000;
+</code></pre>
+
+<p>
+If no value is provided, MySQL automatically inserts the default value.
+</p>
+
+<hr>
+
+<h2>CHECK Constraint</h2>
+
+<pre><code class="language-sql">CREATE TABLE city(
+
+    id INT PRIMARY KEY,
+
+    city VARCHAR(50),
+
+    age INT,
+
+    CONSTRAINT CHECK(
+
+        age >= 18
+
+        AND city="hyderabad"
+
+    )
+
+);
+</code></pre>
+
+<p>
+The inserted row must satisfy the specified condition.
+</p>
+
+<hr>
+
+<h2>Summary</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Topic</th>
+<th>Purpose</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Create Database</td>
+<td>Create a new database.</td>
+</tr>
+
+<tr>
+<td>Drop Database</td>
+<td>Delete a database.</td>
+</tr>
+
+<tr>
+<td>Use Database</td>
+<td>Select the active database.</td>
+</tr>
+
+<tr>
+<td>Create Table</td>
+<td>Create a new table.</td>
+</tr>
+
+<tr>
+<td>Insert</td>
+<td>Add records.</td>
+</tr>
+
+<tr>
+<td>Select</td>
+<td>Retrieve records.</td>
+</tr>
+
+<tr>
+<td>Primary Key</td>
+<td>Unique identifier.</td>
+</tr>
+
+<tr>
+<td>Foreign Key</td>
+<td>Create relationships.</td>
+</tr>
+
+<tr>
+<td>Constraints</td>
+<td>Apply validation rules.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+<p> SQL clauses are used to filter, sort, and limit the records returned by a query. They allow you to retrieve only the data you need from a table. </p> <hr> <h2>WHERE Clause</h2> <p> The <code>WHERE</code> clause filters rows based on a specified condition. Only the rows that satisfy the condition are returned. </p> <h3>Syntax</h3> <pre><code class="language-sql">SELECT * FROM table_name WHERE condition; </code></pre> <h3>Examples</h3> <pre><code class="language-sql">SELECT * FROM student WHERE marks > 80; SELECT * FROM student WHERE city = "Hyderabad"; </code></pre> <h3>Example Output</h3> <table> <thead> <tr> <th>Roll No</th> <th>Name</th> <th>Marks</th> <th>City</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>Ajay</td> <td>92</td> <td>Hyderabad</td> </tr> <tr> <td>3</td> <td>Karan</td> <td>85</td> <td>Hyderabad</td> </tr> </tbody> </table> <p> Only the rows matching the specified condition are displayed. </p> <hr> <h2>LIMIT Clause</h2> <p> The <code>LIMIT</code> clause restricts the number of rows returned by a query. It is commonly used when displaying only the first few records. </p> <h3>Syntax</h3> <pre><code class="language-sql">SELECT * FROM table_name LIMIT number; </code></pre> <h3>Example</h3> <pre><code class="language-sql">SELECT * FROM student LIMIT 3; </code></pre> <p> The query returns only the first three rows from the table. </p> <hr> <h3>LIMIT with WHERE</h3> <p> The <code>LIMIT</code> clause can also be combined with the <code>WHERE</code> clause. </p> <pre><code class="language-sql">SELECT * FROM student WHERE marks > 85 LIMIT 3; </code></pre> <h3>Example Result</h3> <table> <thead> <tr> <th>Roll No</th> <th>Name</th> <th>Marks</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>Ajay</td> <td>95</td> </tr> <tr> <td>5</td> <td>Rahul</td> <td>91</td> </tr> <tr> <td>8</td> <td>Vijay</td> <td>89</td> </tr> </tbody> </table> <hr> <h2>WHERE vs LIMIT</h2> <table> <thead> <tr> <th>Clause</th> <th>Purpose</th> </tr> </thead> <tbody> <tr> <td><code>WHERE</code></td> <td>Filters rows based on a condition.</td> </tr> <tr> <td><code>LIMIT</code></td> <td>Restricts the number of returned rows.</td> </tr> </tbody> </table> <hr> <h2>Combining WHERE and LIMIT</h2> <p> Both clauses are frequently used together to retrieve a small number of records that satisfy a particular condition. </p> <pre><code class="language-sql">SELECT * FROM student WHERE city = "Hyderabad" LIMIT 5; </code></pre> <p> This query returns a maximum of five students whose city is <strong>Hyderabad</strong>. </p> <hr> <h2>Summary</h2> <table> <thead> <tr> <th>Clause</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>WHERE</code></td> <td>Filters rows using conditions.</td> </tr> <tr> <td><code>LIMIT</code></td> <td>Limits the number of returned rows.</td> </tr> <tr> <td><code>WHERE + LIMIT</code></td> <td>Filters the data first, then limits the output.</td> </tr> </tbody> </table> <hr> <p> <strong>Next:</strong> 
+    <h2>ORDER BY Clause</h2>
+
+<p>
+The <code>ORDER BY</code> clause is used to sort the rows returned by a query.
+By default, MySQL sorts the data in <strong>ascending (ASC)</strong> order,
+but it can also sort in <strong>descending (DESC)</strong> order.
+</p>
+
+<hr>
+
+<h3>Syntax</h3>
+
+<pre><code class="language-sql">SELECT *
+FROM table_name
+ORDER BY column_name ASC;
+</code></pre>
+
+<p>
+The <code>ASC</code> keyword sorts the records from the smallest value to the largest value.
+If <code>ASC</code> is omitted, MySQL uses ascending order by default.
+</p>
+
+<hr>
+
+<h3>Ascending Order (ASC)</h3>
+
+<pre><code class="language-sql">SELECT *
+FROM student
+ORDER BY marks ASC;
+</code></pre>
+
+<h4>Example Output</h4>
+
+<table>
+
+<thead>
+<tr>
+<th>Roll No</th>
+<th>Name</th>
+<th>Marks</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>4</td>
+<td>John</td>
+<td>62</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Vijay</td>
+<td>75</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Ajay</td>
+<td>89</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Karan</td>
+<td>95</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<p>
+The records are arranged from the lowest marks to the highest marks.
+</p>
+
+<hr>
+
+<h3>Descending Order (DESC)</h3>
+
+<p>
+Use the <code>DESC</code> keyword to sort the records from highest to lowest.
+</p>
+
+<pre><code class="language-sql">SELECT *
+FROM student
+ORDER BY marks DESC;
+</code></pre>
+
+<h4>Example Output</h4>
+
+<table>
+
+<thead>
+<tr>
+<th>Roll No</th>
+<th>Name</th>
+<th>Marks</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>3</td>
+<td>Karan</td>
+<td>95</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Ajay</td>
+<td>89</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Vijay</td>
+<td>75</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>John</td>
+<td>62</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h3>Sorting by Multiple Columns</h3>
+
+<p>
+MySQL can sort data using more than one column.
+If two rows have the same value in the first column,
+the second column is used for sorting.
+</p>
+
+<pre><code class="language-sql">SELECT *
+FROM student
+ORDER BY city ASC, marks DESC;
+</code></pre>
+
+<p>
+The rows are first grouped alphabetically by <code>city</code>.
+Within each city, students are sorted by their marks in descending order.
+</p>
+
+<hr>
+
+<h3>ORDER BY with WHERE</h3>
+
+<p>
+The <code>ORDER BY</code> clause is commonly used together with
+the <code>WHERE</code> clause.
+</p>
+
+<pre><code class="language-sql">SELECT *
+FROM student
+WHERE city = "Hyderabad"
+ORDER BY marks DESC;
+</code></pre>
+
+<p>
+This query returns only students from Hyderabad and displays them
+from the highest marks to the lowest.
+</p>
+
+<hr>
+
+<h3>ORDER BY with LIMIT</h3>
+
+<p>
+The <code>ORDER BY</code> clause is often combined with
+<code>LIMIT</code> to retrieve the top records.
+</p>
+
+<pre><code class="language-sql">SELECT *
+FROM student
+ORDER BY marks DESC
+LIMIT 5;
+</code></pre>
+
+<p>
+This query returns the five students with the highest marks.
+</p>
+
+<hr>
+
+<h3>Common Uses</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Query</th>
+<th>Purpose</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><code>ORDER BY id ASC</code></td>
+<td>Sort by ID from smallest to largest.</td>
+</tr>
+
+<tr>
+<td><code>ORDER BY marks DESC</code></td>
+<td>Sort by highest marks first.</td>
+</tr>
+
+<tr>
+<td><code>ORDER BY name ASC</code></td>
+<td>Sort names alphabetically.</td>
+</tr>
+
+<tr>
+<td><code>ORDER BY salary DESC LIMIT 10</code></td>
+<td>Display the top 10 highest salaries.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h3>Summary</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Keyword</th>
+<th>Description</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><code>ASC</code></td>
+<td>Ascending order (default).</td>
+</tr>
+
+<tr>
+<td><code>DESC</code></td>
+<td>Descending order.</td>
+</tr>
+
+<tr>
+<td><code>ORDER BY</code></td>
+<td>Sorts query results.</td>
+</tr>
+
+<tr>
+<td><code>ORDER BY + LIMIT</code></td>
+<td>Returns the top or bottom records.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h1>GROUP BY Clause</h1>
+
+<p>
+The <code>GROUP BY</code> clause groups rows that contain the same values into
+summary rows. It is commonly used together with
+<strong>Aggregate Functions</strong> such as
+<code>COUNT()</code>,
+<code>SUM()</code>,
+<code>AVG()</code>,
+<code>MIN()</code>, and
+<code>MAX()</code>.
+</p>
+
+<hr>
+
+<h2>Syntax</h2>
+
+<pre><code class="language-sql">SELECT column_name,
+aggregate_function(column_name)
+FROM table_name
+GROUP BY column_name;
+</code></pre>
+
+<hr>
+
+<h2>Example</h2>
+
+<p>
+Find the highest marks scored in each city.
+</p>
+
+<pre><code class="language-sql">SELECT city,
+MAX(marks)
+FROM student
+GROUP BY city;
+</code></pre>
+
+<h3>Example Output</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>City</th>
+<th>Highest Marks</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Hyderabad</td>
+<td>98</td>
+</tr>
+
+<tr>
+<td>Mumbai</td>
+<td>91</td>
+</tr>
+
+<tr>
+<td>Delhi</td>
+<td>94</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<p>
+Students are grouped by city, and the maximum marks are calculated for each group.
+</p>
+
+<hr>
+
+<h2>HAVING Clause</h2>
+
+<p>
+The <code>HAVING</code> clause filters grouped data.
+Unlike the <code>WHERE</code> clause, which filters rows before grouping,
+<code>HAVING</code> filters the groups after the aggregation has been performed.
+</p>
+
+<hr>
+
+<h3>Syntax</h3>
+
+<pre><code class="language-sql">SELECT column_name,
+aggregate_function(column_name)
+FROM table_name
+GROUP BY column_name
+HAVING condition;
+</code></pre>
+
+<hr>
+
+<h3>Example</h3>
+
+<p>
+Display cities where the highest marks are greater than 90.
+</p>
+
+<pre><code class="language-sql">SELECT city,
+COUNT(rollno)
+FROM student
+GROUP BY city
+HAVING MAX(marks) > 90;
+</code></pre>
+
+<h3>Example Output</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>City</th>
+<th>Students</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Hyderabad</td>
+<td>8</td>
+</tr>
+
+<tr>
+<td>Delhi</td>
+<td>5</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h2>WHERE vs HAVING</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>WHERE</th>
+<th>HAVING</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Filters rows.</td>
+<td>Filters groups.</td>
+</tr>
+
+<tr>
+<td>Runs before GROUP BY.</td>
+<td>Runs after GROUP BY.</td>
+</tr>
+
+<tr>
+<td>Cannot use aggregate functions.</td>
+<td>Can use aggregate functions.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h1>SQL Operators</h1>
+
+<p>
+Operators are used inside the <code>WHERE</code> clause to compare values
+or combine multiple conditions.
+</p>
+
+<hr>
+
+<h2>AND Operator</h2>
+
+<p>
+Returns records only when <strong>both</strong> conditions are true.
+</p>
+
+<pre><code class="language-sql">SELECT *
+FROM student
+WHERE marks > 80
+AND city = "Hyderabad";
+</code></pre>
+
+<hr>
+
+<h2>OR Operator</h2>
+
+<p>
+Returns records when <strong>either</strong> condition is true.
+</p>
+
+<pre><code class="language-sql">SELECT *
+FROM student
+WHERE marks > 80
+OR city = "Hyderabad";
+</code></pre>
+
+<hr>
+
+<h2>BETWEEN Operator</h2>
+
+<p>
+Selects values within a specified range.
+</p>
+
+<pre><code class="language-sql">SELECT *
+FROM student
+WHERE marks BETWEEN 80 AND 90;
+</code></pre>
+
+<hr>
+
+<h2>IN Operator</h2>
+
+<p>
+Checks whether a value exists in a given list.
+</p>
+
+<pre><code class="language-sql">SELECT *
+FROM student
+WHERE city IN ("Mumbai","Delhi");
+</code></pre>
+
+<hr>
+
+<h2>NOT Operator</h2>
+
+<p>
+Reverses a condition.
+</p>
+
+<pre><code class="language-sql">SELECT *
+FROM student
+WHERE city NOT IN ("Mumbai","Delhi");
+</code></pre>
+
+<hr>
+
+<h2>Operator Summary</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><code>AND</code></td>
+<td>Both conditions must be true.</td>
+</tr>
+
+<tr>
+<td><code>OR</code></td>
+<td>At least one condition must be true.</td>
+</tr>
+
+<tr>
+<td><code>BETWEEN</code></td>
+<td>Select values within a range.</td>
+</tr>
+
+<tr>
+<td><code>IN</code></td>
+<td>Match values from a list.</td>
+</tr>
+
+<tr>
+<td><code>NOT</code></td>
+<td>Reverse a condition.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h1>Aggregate Functions</h1>
+
+<p>
+Aggregate functions perform calculations on multiple rows and return
+a single value.
+</p>
+
+<hr>
+
+<h2>Common Aggregate Functions</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><code>COUNT()</code></td>
+<td>Counts rows.</td>
+</tr>
+
+<tr>
+<td><code>SUM()</code></td>
+<td>Adds values.</td>
+</tr>
+
+<tr>
+<td><code>AVG()</code></td>
+<td>Calculates average.</td>
+</tr>
+
+<tr>
+<td><code>MAX()</code></td>
+<td>Returns the highest value.</td>
+</tr>
+
+<tr>
+<td><code>MIN()</code></td>
+<td>Returns the smallest value.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h2>Examples</h2>
+
+<pre><code class="language-sql">SELECT COUNT(*) FROM student;
+
+SELECT MAX(marks)
+FROM student;
+
+SELECT MIN(marks)
+FROM student;
+
+SELECT SUM(marks)
+FROM student;
+
+SELECT AVG(marks)
+FROM student;
+</code></pre>
+
+<hr>
+
+<h2>GROUP BY with Aggregate Function</h2>
+
+<p>
+Aggregate functions become more useful when combined with the
+<code>GROUP BY</code> clause.
+</p>
+
+<pre><code class="language-sql">SELECT city,
+AVG(marks)
+FROM student
+GROUP BY city;
+</code></pre>
+
+<hr>
+
+<h2>Summary</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Topic</th>
+<th>Purpose</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>GROUP BY</td>
+<td>Groups rows having the same value.</td>
+</tr>
+
+<tr>
+<td>HAVING</td>
+<td>Filters grouped data.</td>
+</tr>
+
+<tr>
+<td>AND</td>
+<td>Both conditions must be true.</td>
+</tr>
+
+<tr>
+<td>OR</td>
+<td>Either condition can be true.</td>
+</tr>
+
+<tr>
+<td>BETWEEN</td>
+<td>Select values within a range.</td>
+</tr>
+
+<tr>
+<td>IN</td>
+<td>Compare with multiple values.</td>
+</tr>
+
+<tr>
+<td>NOT</td>
+<td>Reverse a condition.</td>
+</tr>
+
+<tr>
+<td>COUNT()</td>
+<td>Counts records.</td>
+</tr>
+
+<tr>
+<td>SUM()</td>
+<td>Adds values.</td>
+</tr>
+
+<tr>
+<td>AVG()</td>
+<td>Calculates average.</td>
+</tr>
+
+<tr>
+<td>MAX()</td>
+<td>Largest value.</td>
+</tr>
+
+<tr>
+<td>MIN()</td>
+<td>Smallest value.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h1>Updating and Deleting Data</h1>
+
+<p>
+Once data has been inserted into a table, MySQL provides statements to modify,
+delete, and automatically maintain relationships between tables.
+These operations are commonly used when maintaining databases.
+</p>
+
+<hr>
+
+<h2>UPDATE Statement</h2>
+
+<p>
+The <code>UPDATE</code> statement modifies existing records in a table.
+You can update one or multiple columns using the <code>SET</code> clause.
+</p>
+
+<h3>Syntax</h3>
+
+<pre><code class="language-sql">UPDATE table_name
+SET column_name = value
+WHERE condition;
+</code></pre>
+
+<p>
+The <code>WHERE</code> clause specifies which rows should be updated.
+Without it, every row in the table will be modified.
+</p>
+
+<hr>
+
+<h2>Example 1</h2>
+
+<p>
+Update the grade of students whose grade is <strong>A</strong>.
+</p>
+
+<pre><code class="language-sql">UPDATE student
+SET grade = "S"
+WHERE grade = "A";
+</code></pre>
+
+<hr>
+
+<h2>Example 2</h2>
+
+<p>
+Increase the marks of every student by one.
+</p>
+
+<pre><code class="language-sql">UPDATE student
+SET marks = marks + 1;
+</code></pre>
+
+<hr>
+
+<h2>Example Table</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Before</th>
+<th>After</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Marks = 89</td>
+<td>Marks = 90</td>
+</tr>
+
+<tr>
+<td>Marks = 76</td>
+<td>Marks = 77</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h2>DELETE Statement</h2>
+
+<p>
+The <code>DELETE</code> statement removes records from a table.
+Unlike <code>TRUNCATE</code>, only the rows matching the specified condition
+are deleted.
+</p>
+
+<h3>Syntax</h3>
+
+<pre><code class="language-sql">DELETE FROM table_name
+WHERE condition;
+</code></pre>
+
+<hr>
+
+<h2>Example</h2>
+
+<p>
+Delete students whose marks are below 35.
+</p>
+
+<pre><code class="language-sql">DELETE FROM student
+WHERE marks &lt; 35;
+</code></pre>
+
+<hr>
+
+<h2>DELETE without WHERE</h2>
+
+<p>
+If the <code>WHERE</code> clause is omitted,
+every row in the table is deleted.
+The table structure remains unchanged.
+</p>
+
+<pre><code class="language-sql">DELETE FROM student;
+</code></pre>
+
+<hr>
+
+<h2>UPDATE vs DELETE</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Statement</th>
+<th>Purpose</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><code>UPDATE</code></td>
+<td>Modify existing records.</td>
+</tr>
+
+<tr>
+<td><code>DELETE</code></td>
+<td>Remove selected records.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h1>Cascading Foreign Keys</h1>
+
+<p>
+Foreign keys maintain relationships between two tables.
+Cascading automatically updates or removes related records,
+keeping both tables synchronized.
+</p>
+
+<hr>
+
+<h2>Example</h2>
+
+<pre><code class="language-sql">CREATE TABLE student (
+
+    id INT PRIMARY KEY,
+
+    courseid INT,
+
+    FOREIGN KEY(courseid)
+    REFERENCES course(id)
+
+    ON DELETE CASCADE
+
+    ON UPDATE CASCADE
+
+);
+</code></pre>
+
+<hr>
+
+<h2>ON DELETE CASCADE</h2>
+
+<p>
+When a record in the parent table is deleted,
+all related rows in the child table are automatically deleted.
+</p>
+
+<h3>Example</h3>
+
+<p>Course Table</p>
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Course</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>101</td>
+<td>Database</td>
+</tr>
+
+<tr>
+<td>102</td>
+<td>Networking</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<p>Student Table</p>
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Course ID</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>Ajay</td>
+<td>101</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Vijay</td>
+<td>101</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Karan</td>
+<td>102</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<p>
+If course <code>101</code> is deleted,
+students linked to course <code>101</code> are also deleted automatically.
+</p>
+
+<pre><code class="language-sql">DELETE FROM course
+WHERE id = 101;
+</code></pre>
+
+<hr>
+
+<h2>Result</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Course ID</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>3</td>
+<td>Karan</td>
+<td>102</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h2>ON UPDATE CASCADE</h2>
+
+<p>
+If the referenced primary key changes,
+all matching foreign keys are updated automatically.
+</p>
+
+<h3>Example</h3>
+
+<pre><code class="language-sql">UPDATE course
+SET id = 201
+WHERE id = 101;
+</code></pre>
+
+<p>
+Every student whose <code>courseid</code> was <code>101</code>
+automatically becomes <code>201</code>.
+</p>
+
+<hr>
+
+<h2>Before UPDATE</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Student</th>
+<th>Course ID</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Ajay</td>
+<td>101</td>
+</tr>
+
+<tr>
+<td>Vijay</td>
+<td>101</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<h2>After UPDATE</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Student</th>
+<th>Course ID</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Ajay</td>
+<td>201</td>
+</tr>
+
+<tr>
+<td>Vijay</td>
+<td>201</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h2>Advantages of Cascading</h2>
+
+<ul>
+
+<li>Maintains referential integrity.</li>
+
+<li>Prevents orphan records.</li>
+
+<li>Automatically updates related tables.</li>
+
+<li>Reduces manual database maintenance.</li>
+
+</ul>
+
+<hr>
+
+<h2>Summary</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Statement</th>
+<th>Description</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><code>UPDATE</code></td>
+<td>Modify existing records.</td>
+</tr>
+
+<tr>
+<td><code>DELETE</code></td>
+<td>Delete selected rows.</td>
+</tr>
+
+<tr>
+<td><code>ON DELETE CASCADE</code></td>
+<td>Automatically delete related child records.</td>
+</tr>
+
+<tr>
+<td><code>ON UPDATE CASCADE</code></td>
+<td>Automatically update foreign keys.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<h1>Table Modification Queries</h1>
+
+<p>
+As a database grows, table structures often need to be modified.
+MySQL provides the <code>ALTER TABLE</code> statement to add, remove,
+rename, or modify columns without recreating the table.
+</p>
+
+<hr>
+
+<h2>ALTER TABLE</h2>
+
+<p>
+The <code>ALTER TABLE</code> statement changes the structure of an existing table.
+</p>
+
+<pre><code class="language-sql">ALTER TABLE table_name
+operation;
+</code></pre>
+
+<hr>
+
+<h2>ADD COLUMN</h2>
+
+<p>
+Adds a new column to an existing table.
+</p>
+
+<h3>Syntax</h3>
+
+<pre><code class="language-sql">ALTER TABLE table_name
+ADD COLUMN age INT;
+</code></pre>
+
+<h3>Example</h3>
+
+<p><strong>Before</strong></p>
+
+<table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>Ajay</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Vijay</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<p><strong>After</strong></p>
+
+<table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>Ajay</td>
+<td>NULL</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Vijay</td>
+<td>NULL</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h2>DROP COLUMN</h2>
+
+<p>
+Removes an existing column permanently from a table.
+</p>
+
+<pre><code class="language-sql">ALTER TABLE table_name
+DROP COLUMN age;
+</code></pre>
+
+<p>
+Only the specified column is deleted.
+The remaining data is preserved.
+</p>
+
+<hr>
+
+<h2>RENAME TABLE</h2>
+
+<p>
+Changes the name of an existing table.
+</p>
+
+<pre><code class="language-sql">ALTER TABLE student
+RENAME TO students;
+</code></pre>
+
+<hr>
+
+<h2>CHANGE COLUMN</h2>
+
+<p>
+Renames a column and optionally changes its datatype.
+</p>
+
+<pre><code class="language-sql">ALTER TABLE student
+
+CHANGE COLUMN
+name
+student_name
+VARCHAR(100);
+</code></pre>
+
+<hr>
+
+<h2>MODIFY COLUMN</h2>
+
+<p>
+Changes only the datatype or constraints of a column without changing its name.
+</p>
+
+<pre><code class="language-sql">ALTER TABLE student
+
+MODIFY COLUMN
+age BIGINT NOT NULL;
+</code></pre>
+
+<hr>
+
+<h2>CHANGE vs MODIFY</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>CHANGE</th>
+<th>MODIFY</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Rename column</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>Change datatype</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>Requires old name</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>Requires new name</td>
+<td>Yes</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h2>TRUNCATE TABLE</h2>
+
+<p>
+The <code>TRUNCATE</code> statement removes every row from a table while
+keeping the table structure intact.
+</p>
+
+<pre><code class="language-sql">TRUNCATE TABLE table_name;
+</code></pre>
+
+<hr>
+
+<h2>Example</h2>
+
+<p><strong>Before</strong></p>
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>Ajay</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Vijay</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Karan</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<p><strong>After TRUNCATE</strong></p>
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+</tbody>
+
+</table>
+
+<p>
+All rows are removed, but the table and its columns still exist.
+</p>
+
+<hr>
+
+<h2>DELETE vs TRUNCATE</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>DELETE</th>
+<th>TRUNCATE</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Deletes selected rows.</td>
+<td>Deletes every row.</td>
+</tr>
+
+<tr>
+<td>Uses WHERE clause.</td>
+<td>No WHERE clause.</td>
+</tr>
+
+<tr>
+<td>Can delete specific records.</td>
+<td>Deletes entire table data.</td>
+</tr>
+
+<tr>
+<td>Slower for large tables.</td>
+<td>Faster.</td>
+</tr>
+
+<tr>
+<td>Table structure remains.</td>
+<td>Table structure remains.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h2>ALTER TABLE Summary</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><code>ADD COLUMN</code></td>
+<td>Add a new column.</td>
+</tr>
+
+<tr>
+<td><code>DROP COLUMN</code></td>
+<td>Remove a column.</td>
+</tr>
+
+<tr>
+<td><code>RENAME</code></td>
+<td>Rename a table.</td>
+</tr>
+
+<tr>
+<td><code>CHANGE COLUMN</code></td>
+<td>Rename a column and modify datatype.</td>
+</tr>
+
+<tr>
+<td><code>MODIFY COLUMN</code></td>
+<td>Change datatype or constraints.</td>
+</tr>
+
+<tr>
+<td><code>TRUNCATE</code></td>
+<td>Delete all rows while keeping the table.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h2>Quick Reference</h2>
+
+<pre><code class="language-sql">-- Add Column
+ALTER TABLE student
+ADD COLUMN age INT;
+
+-- Drop Column
+ALTER TABLE student
+DROP COLUMN age;
+
+-- Rename Table
+ALTER TABLE student
+RENAME TO students;
+
+-- Rename Column
+ALTER TABLE student
+CHANGE COLUMN name student_name VARCHAR(100);
+
+-- Modify Column
+ALTER TABLE student
+MODIFY COLUMN age BIGINT;
+
+-- Remove All Records
+TRUNCATE TABLE student;
+</code></pre>
+
+<hr>
+
+<h2>Summary</h2>
+
+<p>
+The <code>ALTER TABLE</code> statement is used to change the structure of existing
+tables by adding, removing, renaming, or modifying columns.
+The <code>TRUNCATE</code> statement removes all records while preserving
+the table definition, making it much faster than deleting rows individually.
+</p>
+
+<hr>
+
+<h1>SQL Joins</h1>
+
+<p>
+SQL Joins combine data from two or more tables based on a related column.
+They are one of the most important concepts in relational databases because
+they allow information stored in separate tables to be retrieved together.
+</p>
+
+<hr>
+
+<h2>INNER JOIN</h2>
+
+<p>
+The <strong>INNER JOIN</strong> returns only the rows that have matching values
+in both tables.
+</p>
+
+<pre><code class="language-sql">SELECT columns
+FROM tableA
+INNER JOIN tableB
+ON tableA.column = tableB.column;
+</code></pre>
+
+<p>
+Only records existing in both tables are included in the result.
+</p>
+
+<img src="images/sql-inner-join.png" alt="INNER JOIN">
+
+<hr>
+
+<h2>LEFT JOIN</h2>
+
+<p>
+The <strong>LEFT JOIN</strong> returns all records from the left table
+and only the matching rows from the right table.
+If no match exists, NULL values are returned for the right table.
+</p>
+
+<pre><code class="language-sql">SELECT columns
+FROM tableA
+LEFT JOIN tableB
+ON tableA.column = tableB.column;
+</code></pre>
+
+<img src="images/sql-left-join.png" alt="LEFT JOIN">
+
+<hr>
+
+<h2>RIGHT JOIN</h2>
+
+<p>
+The <strong>RIGHT JOIN</strong> returns every row from the right table
+and only the matching rows from the left table.
+If no matching record exists,
+NULL values are returned for the left table.
+</p>
+
+<pre><code class="language-sql">SELECT columns
+FROM tableA
+RIGHT JOIN tableB
+ON tableA.column = tableB.column;
+</code></pre>
+
+<img src="images/sql-right-join.png" alt="RIGHT JOIN">
+
+<hr>
+
+<h2>FULL OUTER JOIN (Using UNION)</h2>
+
+<p>
+MySQL does not directly support a FULL OUTER JOIN.
+Instead, it can be achieved by combining a LEFT JOIN and a RIGHT JOIN using
+the <code>UNION</code> operator.
+</p>
+
+<pre><code class="language-sql">SELECT columns
+FROM tableA AS A
+LEFT JOIN tableB AS B
+ON A.id = B.id
+
+UNION
+
+SELECT columns
+FROM tableA AS A
+RIGHT JOIN tableB AS B
+ON A.id = B.id;
+</code></pre>
+
+<img src="images/sql-full-join.png" alt="FULL JOIN">
+
+<hr>
+
+<h2>LEFT EXCLUSIVE JOIN</h2>
+
+<p>
+Returns only the rows that exist in the left table but not in the right table.
+</p>
+
+<pre><code class="language-sql">SELECT columns
+FROM tableA
+LEFT JOIN tableB
+ON tableA.id = tableB.id
+WHERE tableB.id IS NULL;
+</code></pre>
+
+<hr>
+
+<h2>RIGHT EXCLUSIVE JOIN</h2>
+
+<p>
+Returns only the rows that exist in the right table but not in the left table.
+</p>
+
+<pre><code class="language-sql">SELECT columns
+FROM tableA
+RIGHT JOIN tableB
+ON tableA.id = tableB.id
+WHERE tableA.id IS NULL;
+</code></pre>
+
+<hr>
+
+<h2>SELF JOIN</h2>
+
+<p>
+A <strong>SELF JOIN</strong> joins a table with itself.
+It is useful when comparing rows within the same table,
+such as employees and managers.
+</p>
+
+<pre><code class="language-sql">SELECT columns
+FROM employee AS A
+JOIN employee AS B
+ON A.manager_id = B.employee_id;
+</code></pre>
+
+<hr>
+
+<h2>JOIN Summary</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Join</th>
+<th>Returns</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>INNER JOIN</td>
+<td>Matching rows from both tables.</td>
+</tr>
+
+<tr>
+<td>LEFT JOIN</td>
+<td>All left rows + matching right rows.</td>
+</tr>
+
+<tr>
+<td>RIGHT JOIN</td>
+<td>All right rows + matching left rows.</td>
+</tr>
+
+<tr>
+<td>FULL JOIN</td>
+<td>All rows from both tables.</td>
+</tr>
+
+<tr>
+<td>SELF JOIN</td>
+<td>Join a table with itself.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h1>UNION</h1>
+
+<p>
+The <code>UNION</code> operator combines the results of two SELECT queries.
+Duplicate rows are automatically removed.
+</p>
+
+<pre><code class="language-sql">SELECT columns
+FROM tableA
+
+UNION
+
+SELECT columns
+FROM tableB;
+</code></pre>
+
+<hr>
+
+<h2>UNION ALL</h2>
+
+<p>
+Unlike <code>UNION</code>,
+<code>UNION ALL</code> keeps duplicate rows,
+making it slightly faster.
+</p>
+
+<pre><code class="language-sql">SELECT columns
+FROM tableA
+
+UNION ALL
+
+SELECT columns
+FROM tableB;
+</code></pre>
+
+<hr>
+
+<h2>UNION vs UNION ALL</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>UNION</th>
+<th>UNION ALL</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Removes duplicates.</td>
+<td>Keeps duplicates.</td>
+</tr>
+
+<tr>
+<td>Slightly slower.</td>
+<td>Faster.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h1>SQL Subqueries</h1>
+
+<p>
+A <strong>Subquery</strong> is a query written inside another SQL query.
+The inner query executes first,
+and its result is used by the outer query.
+</p>
+
+<hr>
+
+<h2>Syntax</h2>
+
+<pre><code class="language-sql">SELECT column_name
+FROM table_name
+WHERE column_name OPERATOR
+(
+    SELECT column_name
+    FROM table_name
+);
+</code></pre>
+
+<hr>
+
+<h2>Example</h2>
+
+<p>
+Display students whose marks are greater than the class average.
+</p>
+
+<pre><code class="language-sql">SELECT name, marks
+FROM student
+WHERE marks >
+
+(
+    SELECT AVG(marks)
+    FROM student
+);
+</code></pre>
+
+<hr>
+
+<h1>Additional SQL Operators</h1>
+
+<p>
+The modulo operator can be used to filter even or odd values,
+while <code>IN</code> compares a value against multiple options.
+</p>
+
+<pre><code class="language-sql">-- Even Numbers
+
+SELECT *
+FROM table_name
+WHERE id % 2 = 0;
+
+-- Values From List
+
+SELECT *
+FROM table_name
+WHERE id IN (102,104,106);
+</code></pre>
+
+<hr>
+
+<h1>VIEW</h1>
+
+<p>
+A <strong>VIEW</strong> is a virtual table created from the result of a SQL query.
+It stores only the query, not the actual data.
+Whenever the view is accessed,
+the query executes automatically.
+</p>
+
+<hr>
+
+<h2>Create View</h2>
+
+<pre><code class="language-sql">CREATE VIEW view1 AS
+
+SELECT rollno,
+       name
+
+FROM student;
+</code></pre>
+
+<hr>
+
+<h2>Using a View</h2>
+
+<pre><code class="language-sql">SELECT *
+FROM view1;
+</code></pre>
+
+<hr>
+
+<h2>Advantages of Views</h2>
+
+<ul>
+
+<li>Simplifies complex queries.</li>
+
+<li>Improves security by exposing only required columns.</li>
+
+<li>Provides reusable query logic.</li>
+
+<li>Makes reporting easier.</li>
+
+</ul>
+
+<hr>
+
+<h1>Complete SQL Summary</h1>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Topic</th>
+<th>Purpose</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>INNER JOIN</td>
+<td>Return matching rows.</td>
+</tr>
+
+<tr>
+<td>LEFT JOIN</td>
+<td>All left rows + matching right rows.</td>
+</tr>
+
+<tr>
+<td>RIGHT JOIN</td>
+<td>All right rows + matching left rows.</td>
+</tr>
+
+<tr>
+<td>FULL JOIN</td>
+<td>Combine both tables.</td>
+</tr>
+
+<tr>
+<td>SELF JOIN</td>
+<td>Join a table with itself.</td>
+</tr>
+
+<tr>
+<td>UNION</td>
+<td>Merge results without duplicates.</td>
+</tr>
+
+<tr>
+<td>UNION ALL</td>
+<td>Merge results including duplicates.</td>
+</tr>
+
+<tr>
+<td>Subquery</td>
+<td>Nested query inside another query.</td>
+</tr>
+
+<tr>
+<td>VIEW</td>
+<td>Virtual table created from a query.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ul>
+
+<li>Use <strong>JOINS</strong> to combine data from multiple tables.</li>
+
+<li>Use <strong>UNION</strong> to combine the results of multiple SELECT queries.</li>
+
+<li>Use <strong>Subqueries</strong> when one query depends on another.</li>
+
+<li>Use <strong>Views</strong> to simplify frequently used queries.</li>
+
+<li>Choose the appropriate JOIN based on the data you need.</li>
+
+</ul>

@@ -1,0 +1,52 @@
+name: Update Portfolio JSON
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Every hour
+    - cron: "* */6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+
+          if [ -f python-script/requirements.txt ]; then
+            pip install -r python-script/requirements.txt
+          fi
+
+      - name: Run Python Script
+        env:
+          TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
+        run: |
+          python python-script/main.py
+
+      - name: Commit updated JSON files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/.
+
+          if git diff --cached --quiet; then
+            echo "No changes detected."
+          else
+            git commit -m "Auto-update portfolio JSON"
+            git push
+          fi

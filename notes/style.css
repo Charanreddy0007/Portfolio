@@ -1,0 +1,416 @@
+/* ==========================================
+   Light Theme (Default)
+========================================== */
+
+:root{
+
+    --bg:#ffffff;
+    --surface:#f8f9fb;
+    --surface-2:#eef2f7;
+
+    --text:#111827;
+    --muted:#6b7280;
+
+    --border:#dfe3e8;
+
+    --link:#2563eb;
+
+    --code-bg:#f3f4f6;
+    --code-text:#111827;
+
+}
+
+/* ==========================================
+   Dark Theme
+========================================== */
+
+[data-theme="dark"]{
+
+    --bg:#0a0a0a;
+    --surface:#111111;
+    --surface-2:#161b22;
+
+    --text:#f3f4f6;
+    --muted:#a1a1aa;
+
+    --border:var(--border);
+
+    --link:#60a5fa;
+
+    --code-bg:#0f172a;
+    --code-text:#e2e8f0;
+
+}
+
+/* ==========================================
+   Documentation / Notes Theme
+========================================== */
+
+.note-container{
+    max-width:900px;
+    margin:0 auto;
+    padding:60px 32px;
+    color:var(--text);
+    font-size:17px;
+    line-height:1.8;
+}
+
+/* -----------------------------
+   Headings
+----------------------------- */
+
+.note-container h1{
+    font-size:3rem;
+    margin-bottom:1rem;
+    line-height:1.2;
+}
+
+.note-container h2{
+    margin-top:3rem;
+    margin-bottom:1rem;
+    padding-bottom:.4rem;
+    border-bottom:1px solid var(--border);
+    font-size:2rem;
+}
+
+.note-container h3{
+    margin-top:2.5rem;
+    margin-bottom:.8rem;
+    font-size:1.55rem;
+}
+
+.note-container h4{
+    margin-top:2rem;
+    margin-bottom:.6rem;
+    font-size:1.25rem;
+}
+
+.note-container h5{
+    margin-top:1.5rem;
+    font-size:1.1rem;
+}
+
+.note-container h6{
+    margin-top:1.25rem;
+    color:var(--muted);
+}
+
+/* -----------------------------
+   Paragraphs
+----------------------------- */
+
+.note-container p{
+    margin:1rem 0;
+    color:var(--muted);
+}
+
+/* -----------------------------
+   Links
+----------------------------- */
+
+.note-container a{
+    color:var(--link);
+    text-decoration:none;
+}
+
+.note-container a:hover{
+    text-decoration:underline;
+}
+
+/* -----------------------------
+   Lists
+----------------------------- */
+
+.note-container ul,
+.note-container ol{
+    margin:1rem 0;
+    padding-left:1.8rem;
+}
+
+.note-container li{
+    margin:.5rem 0;
+}
+
+/* -----------------------------
+   Horizontal Rule
+----------------------------- */
+
+.note-container hr{
+    margin:3rem 0;
+    border:none;
+    border-top:1px solid var(--border);
+}
+
+/* -----------------------------
+   Inline Code
+----------------------------- */
+
+.note-container :not(pre)>code{
+    background:var(--code-bg);
+    color:#7dd3fc;
+    padding:2px 6px;
+    border-radius:6px;
+    font-size:.95em;
+    font-family:Consolas, monospace;
+}
+
+/* -----------------------------
+   Code Blocks
+----------------------------- */
+
+.note-container pre{
+    background:var(--code-bg);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:18px;
+    overflow:auto;
+    margin:1.5rem 0;
+}
+
+.note-container pre code{
+    background:none;
+    color:var(--code-text);
+    padding:0;
+    font-size:.95rem;
+    line-height:1.6;
+    font-family:Consolas, monospace;
+}
+
+/* -----------------------------
+   Blockquote
+----------------------------- */
+
+.note-container blockquote{
+    border-left:4px solid #3b82f6;
+    background:rgba(59,130,246,.08);
+    padding:1rem 1.2rem;
+    margin:1.5rem 0;
+    border-radius:8px;
+    color:#cbd5e1;
+}
+
+/* -----------------------------
+   Tables
+----------------------------- */
+
+.note-container table{
+    width:100%;
+    border-collapse:collapse;
+    margin:2rem 0;
+    overflow:hidden;
+    border-radius:10px;
+}
+
+.note-container thead{
+    background:var(--surface);
+}
+
+.note-container th{
+    text-align:left;
+    padding:14px 18px;
+    border-bottom:1px solid var(--border);
+}
+
+.note-container td{
+    padding:14px 18px;
+    border-bottom:1px solid rgba(255,255,255,.05);
+    color:var(--muted);
+}
+
+body{
+
+    background:var(--bg);
+    color:var(--text);
+
+}
+
+/* -----------------------------
+   Images
+----------------------------- */
+
+.note-container img{
+    width:100%;
+    border-radius:12px;
+    margin:2rem 0;
+    border:1px solid var(--border);
+}
+
+/* -----------------------------
+   Keyboard Keys
+----------------------------- */
+
+.note-container kbd{
+    background:var(--surface);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:6px;
+    padding:3px 7px;
+    font-size:.85rem;
+    font-family:monospace;
+}
+
+/* -----------------------------
+   Strong / Italic
+----------------------------- */
+
+.note-container strong{
+    color:var(--text);
+    font-weight:600;
+}
+
+.note-container em{
+    font-style:italic;
+}
+
+/* -----------------------------
+   Selection
+----------------------------- */
+
+.note-container ::selection{
+    background:#2563eb;
+    color:#fff;
+}
+
+/* -----------------------------
+   Scrollbar
+----------------------------- */
+
+.note-container pre::-webkit-scrollbar{
+    height:8px;
+}
+
+.note-container pre::-webkit-scrollbar-thumb{
+    background:#3b82f6;
+    border-radius:20px;
+}
+
+/* -----------------------------
+   Responsive
+----------------------------- */
+
+@media (max-width:768px){
+
+    .note-container{
+        padding:28px 18px;
+        font-size:16px;
+    }
+
+    .note-container h1{
+        font-size:2.2rem;
+    }
+
+    .note-container h2{
+        font-size:1.7rem;
+    }
+
+    .note-container h3{
+        font-size:1.4rem;
+    }
+
+    .note-container table{
+        display:block;
+        overflow-x:auto;
+    }
+
+}
+
+.note-container h1,
+.note-container h2,
+.note-container h3,
+.note-container h4,
+.note-container h5{
+
+    color:var(--text);
+
+}
+
+#themeToggle{
+
+    width:42px;
+    height:42px;
+
+    border:none;
+    border-radius:12px;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    transition:.25s;
+
+}
+
+#themeToggle:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.note-nav{
+
+    max-width:900px;
+
+    margin:30px auto;
+
+    padding:0 32px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.back-link{
+
+    text-decoration:none;
+
+    color:var(--muted);
+
+    font-size:16px;
+
+}
+
+.back-link:hover{
+
+    color:var(--text);
+
+}
+
+#themeToggle{
+
+    width:42px;
+    height:42px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#themeToggle svg{
+
+    width:20px;
+    height:20px;
+
+    fill:currentColor;
+
+}
