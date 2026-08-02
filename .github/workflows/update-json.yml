@@ -33,7 +33,7 @@ jobs:
 
       - name: Run Python Script
         env:
-          TOKENGITHUB: ${{ secrets.TOKEN_GITHUB }}
+          TOKENGITHUB: ${{ secrets.TOKENGITHUB }}
         run: |
           python python-script/main.py
 
