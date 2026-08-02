@@ -4,19 +4,21 @@ import json
 import os
 from collections import defaultdict
 from dotenv import load_dotenv
+from pathlib import Path
 import config
 
-from pathlib import Path
-import os
 
-print("Current working directory:", os.getcwd())
-print("Script location:", Path(__file__).resolve())
-print("Looking for:", Path("../data").resolve())
-print("Data exists:", Path("../data").exists())
+# Path
+ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = ROOT / "data"
+ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = ROOT / "data"
+DATA_DIR.mkdir(exist_ok=True)
+
+response_file = DATA_DIR / "response.json"
+gitresponse_file = DATA_DIR / "gitresponse.json"
 
 load_dotenv()
-
-
 TOKENGITHUB = os.getenv("TOKENGITHUB")
 
 json_data = {
