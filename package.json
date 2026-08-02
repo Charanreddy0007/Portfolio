@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Charan Reddy Muli — Cyber Security & Digital Forensics Portfolio",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:speed-insights",
+    "build:speed-insights": "esbuild speed-insights.js --bundle --format=iife --outfile=dist/speed-insights.bundle.js --minify",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "portfolio",
+    "cyber-security"
+  ],
+  "author": "Charan Reddy Muli",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/speed-insights": "^1.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
+  }
+}
