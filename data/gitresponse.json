@@ -12,11 +12,11 @@
                 "totalCount": 1
             },
             "repoCount": {
-                "totalCount": 9
+                "totalCount": 10
             },
             "contributionsCollection": {
                 "contributionCalendar": {
-                    "totalContributions": 255,
+                    "totalContributions": 256,
                     "weeks": [
                         {
                             "contributionDays": [
@@ -2080,7 +2080,7 @@
                                 },
                                 {
                                     "date": "2026-08-08",
-                                    "contributionCount": 2,
+                                    "contributionCount": 3,
                                     "contributionLevel": "FIRST_QUARTILE"
                                 }
                             ]
@@ -2143,6 +2143,28 @@
                                     "node": {
                                         "name": "C++",
                                         "color": "#f34b7d"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "developer-portfolios",
+                        "description": "A list of developer portfolios for your inspiration",
+                        "url": "https://github.com/Charanreddy0007/developer-portfolios",
+                        "stargazerCount": 0,
+                        "forkCount": 0,
+                        "primaryLanguage": {
+                            "name": "Python",
+                            "color": "#3572A5"
+                        },
+                        "languages": {
+                            "edges": [
+                                {
+                                    "size": 65573,
+                                    "node": {
+                                        "name": "Python",
+                                        "color": "#3572A5"
                                     }
                                 }
                             ]
@@ -2296,22 +2318,22 @@
             "languageBreakdown": [
                 {
                     "name": "Python",
-                    "percentage": 58.86,
+                    "percentage": 76.21,
                     "color": "#3572A5"
                 },
                 {
                     "name": "Shell",
-                    "percentage": 20.54,
+                    "percentage": 11.88,
                     "color": "#89e051"
                 },
                 {
                     "name": "Java",
-                    "percentage": 20.04,
+                    "percentage": 11.59,
                     "color": "#b07219"
                 },
                 {
                     "name": "C++",
-                    "percentage": 0.56,
+                    "percentage": 0.32,
                     "color": "#f34b7d"
                 }
             ]
