@@ -12,7 +12,7 @@
                 "totalCount": 1
             },
             "repoCount": {
-                "totalCount": 10
+                "totalCount": 11
             },
             "contributionsCollection": {
                 "contributionCalendar": {
@@ -2141,6 +2141,49 @@
                         }
                     },
                     {
+                        "name": "Portfolio",
+                        "description": null,
+                        "url": "https://github.com/Charanreddy0007/Portfolio",
+                        "stargazerCount": 0,
+                        "forkCount": 0,
+                        "primaryLanguage": {
+                            "name": "HTML",
+                            "color": "#e34c26"
+                        },
+                        "languages": {
+                            "edges": [
+                                {
+                                    "size": 96704,
+                                    "node": {
+                                        "name": "HTML",
+                                        "color": "#e34c26"
+                                    }
+                                },
+                                {
+                                    "size": 29496,
+                                    "node": {
+                                        "name": "CSS",
+                                        "color": "#663399"
+                                    }
+                                },
+                                {
+                                    "size": 21315,
+                                    "node": {
+                                        "name": "JavaScript",
+                                        "color": "#f1e05a"
+                                    }
+                                },
+                                {
+                                    "size": 8952,
+                                    "node": {
+                                        "name": "Python",
+                                        "color": "#3572A5"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
                         "name": "Charanreddy0007",
                         "description": null,
                         "url": "https://github.com/Charanreddy0007/Charanreddy0007",
@@ -2288,22 +2331,37 @@
             "languageBreakdown": [
                 {
                     "name": "Python",
-                    "percentage": 76.21,
+                    "percentage": 40.85,
                     "color": "#3572A5"
                 },
                 {
+                    "name": "HTML",
+                    "percentage": 31.0,
+                    "color": "#e34c26"
+                },
+                {
+                    "name": "CSS",
+                    "percentage": 9.46,
+                    "color": "#663399"
+                },
+                {
+                    "name": "JavaScript",
+                    "percentage": 6.83,
+                    "color": "#f1e05a"
+                },
+                {
                     "name": "Shell",
-                    "percentage": 11.88,
+                    "percentage": 5.92,
                     "color": "#89e051"
                 },
                 {
                     "name": "Java",
-                    "percentage": 11.59,
+                    "percentage": 5.78,
                     "color": "#b07219"
                 },
                 {
                     "name": "C++",
-                    "percentage": 0.32,
+                    "percentage": 0.16,
                     "color": "#f34b7d"
                 }
             ]
