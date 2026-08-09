@@ -1,0 +1,158 @@
+🚀 Excited to share my new developer portfolio!
+
+
+
+Over the last few weeks, I've been building a portfolio that goes beyond showcasing my projects—it automatically reflects my coding journey, learning progress, and technical growth.
+
+
+
+Instead of manually updating statistics every time I solve a problem or push code, I built an automated pipeline that keeps everything in sync.
+
+
+
+🔧 How it works
+
+ • GitHub Actions automatically runs a Python workflow.
+
+ • Python fetches my latest LeetCode statistics using the LeetCode GraphQL API.
+
+ • It also retrieves my GitHub activity using the GitHub GraphQL API.
+
+ • The data is processed into JSON files.
+
+ • The frontend reads those files to display live dashboards, contribution graphs, repository details, language statistics, and coding progress.
+
+
+
+✨ Features
+
+💻 Modern responsive portfolio
+
+
+ • Clean dark UI
+
+ • Fully responsive across desktop and mobile
+
+📊 Live GitHub Dashboard
+
+ • Contribution graph
+
+ • Repository statistics
+
+ • Language breakdown
+
+ • Featured repositories
+
+🧩 Live LeetCode Dashboard
+
+ • Problems solved
+
+ • Difficulty breakdown
+
+ • Current streak
+
+ • Acceptance rate
+
+ • Contribution heatmap
+
+📝 Technical Blog
+
+ • Notes and write-ups on networking, Linux, SQL, cybersecurity, and projects
+
+ • A place to document what I'm learning while building
+
+⚙️ Automated Updates
+
+ • GitHub Actions
+
+ • Python
+
+ • GraphQL APIs
+
+ • JSON data pipeline
+
+One of the most enjoyable parts of this project was connecting multiple services into a single automated workflow—from fetching live data with APIs to transforming it into a dashboard that updates without manual intervention.
+
+This project helped me gain hands-on experience with frontend development, API integration, automation, responsive design, and building data-driven web applications.
+
+I'd love to hear your feedback or suggestions for improvement!
+
+🌐 Portfolio: https://charanreddy.qzz.io/
+
+#Portfolio #WebDevelopment #Frontend #JavaScript #Python #HTML #CSS #GitHub #GitHubActions #GraphQL #LeetCode #Automation #CyberSecurity #SoftwareEngineer #OpenToWork
+
+
+
+
+
+
+
+
+
+
+
+
+
+🚀 Excited to share my new developer portfolio!
+
+🌐 Portfolio: https://charanreddy.qzz.io/
+
+Over the last few weeks, I've been building a portfolio that goes beyond showcasing my projects—it automatically reflects my coding journey, learning progress, and technical growth.
+
+Instead of manually updating statistics every time I solve a problem or push code, I built an automated pipeline that keeps everything in sync.
+
+🔧 How it works
+
+• GitHub Actions automatically runs a Python workflow.
+
+• Python fetches my latest LeetCode statistics using the LeetCode GraphQL API.
+
+• It also retrieves my GitHub activity using the GitHub GraphQL API.
+
+• The data is processed into JSON files.
+
+• The frontend reads those files to display live dashboards, contribution graphs, repository details, language statistics, and coding progress.
+
+✨ Features
+
+💻 Modern responsive portfolio
+
+ • Clean dark UI
+ • Fully responsive across desktop and mobile
+
+📊 Live GitHub Dashboard
+
+ • Contribution graph
+ • Repository statistics
+ • Language breakdown
+ • Featured repositories
+
+🧩 Live LeetCode Dashboard
+
+ • Problems solved
+ • Difficulty breakdown
+ • Current streak
+ • Acceptance rate
+ • Contribution heatmap
+
+📝 Technical Blog
+
+ • Notes and write-ups on networking, Linux, SQL, cybersecurity, and projects
+ • A place to document what I'm learning while building
+
+⚙️ Automated Updates
+
+ • GitHub Actions
+ • Python
+ • GraphQL APIs
+ • JSON data pipeline
+
+One of the most enjoyable parts of this project was connecting multiple services into a single automated workflow—from fetching live data with APIs to transforming it into a dashboard that updates without manual intervention.
+
+This project helped me gain hands-on experience with frontend development, API integration, automation, responsive design, and building data-driven web applications.
+
+I'd love to hear your feedback or suggestions for improvement!
+
+🔗 Portfolio: https://charanreddy.qzz.io/
+
+#Portfolio #WebDevelopment #Frontend #JavaScript #Python #HTML #CSS #GitHub #GitHubActions #GraphQL #LeetCode #Automation #CyberSecurity #SoftwareEngineer #OpenToWork

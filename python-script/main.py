@@ -11,12 +11,11 @@ import config
 # Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "data"
 DATA_DIR.mkdir(exist_ok=True)
 
 response_file = DATA_DIR / "response.json"
 gitresponse_file = DATA_DIR / "gitresponse.json"
+svg_file = DATA_DIR / "github_heatmap.svg"
 
 load_dotenv()
 TOKENGITHUB = os.getenv("TOKENGITHUB")
@@ -102,10 +101,6 @@ print("Done, GitHub")
 
 from xml.etree.ElementTree import Element, SubElement, ElementTree
 
-SVG_DIR = ROOT / "assets"
-SVG_DIR.mkdir(exist_ok=True)
-
-svg_file = SVG_DIR / "github_heatmap.svg"
 
 weeks = githubdata["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
 
