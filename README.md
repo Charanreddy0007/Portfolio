@@ -215,10 +215,7 @@ SQLite
 
 ## 📄 License
 
-This portfolio and its individual projects may have different licenses.
-
-Check the license included in each project repository before using or redistributing its code.
-
+### MIT License
 ---
 
 <p align="center">
