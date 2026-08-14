@@ -183,10 +183,10 @@ I'm interested in:
 https://charanreddy.qzz.io/
 
 **GitHub:**
-https://github.com/
+https://github.com/charanreddy0007/
 
 **LeetCode:**
-https://leetcode.com/
+https://leetcode.com/charanreddy0007/
 
 ---
 
