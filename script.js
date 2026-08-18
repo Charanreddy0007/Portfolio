@@ -212,27 +212,56 @@ function buildHeatmap(id, calendar) {
 
     el.innerHTML = "";
 
-    // Start from ~1 year ago
-    const start = new Date();
-    start.setDate(start.getDate() - 370);
+    // Today in UTC
+    const today = new Date();
 
-    // Align to Sunday (like LeetCode)
-    start.setDate(start.getDate() - start.getDay());
+    const todayUTC = new Date(Date.UTC(
+        today.getUTCFullYear(),
+        today.getUTCMonth(),
+        today.getUTCDate()
+    ));
 
-    for (let week = 0; week < 53; week++) {
+    // Start ~1 year ago
+    const start = new Date(todayUTC);
+    start.setUTCDate(start.getUTCDate() - 370);
+
+    // Align start to Sunday
+    start.setUTCDate(
+        start.getUTCDate() - start.getUTCDay()
+    );
+
+    // Find the latest date actually present in the JSON
+    const timestamps = Object.keys(calendar).map(Number);
+    const latestTimestamp = Math.max(...timestamps);
+
+    const end = new Date(latestTimestamp * 1000);
+
+    // Normalize to UTC midnight
+    end.setUTCHours(0, 0, 0, 0);
+
+    // Calculate required number of weeks
+    const totalDays = Math.floor(
+        (end - start) / (1000 * 60 * 60 * 24)
+    ) + 1;
+
+    const totalWeeks = Math.ceil(totalDays / 7);
+
+    for (let week = 0; week < totalWeeks; week++) {
 
         for (let day = 0; day < 7; day++) {
 
             const d = new Date(start);
-            d.setDate(start.getDate() + week * 7 + day);
+                    
+            d.setUTCDate(
+                start.getUTCDate() + week * 7 + day
+            );
+            
+            // Don't create boxes after the latest date in the JSON
+            if (d > end) continue;
+            
+            const ts = Math.floor(d.getTime() / 1000);
 
-            const ts = Math.floor(Date.UTC(
-                d.getUTCFullYear(),
-                d.getUTCMonth(),
-                d.getUTCDate()
-            ) / 1000);
-
-            const count = calendar[ts] || 0;
+            const count = calendar[String(ts)] || 0;
 
             const cell = document.createElement("div");
             cell.className = "hm-cell";
@@ -249,7 +278,9 @@ function buildHeatmap(id, calendar) {
                 color = "#126F5B";
 
             cell.style.background = color;
-            cell.title = `${d.toDateString()} - ${count} submissions`;
+
+            cell.title =
+                `${d.toDateString()} - ${count} submissions`;
 
             el.appendChild(cell);
         }
