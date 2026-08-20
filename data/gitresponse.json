@@ -2115,7 +2115,7 @@
                         "languages": {
                             "edges": [
                                 {
-                                    "size": 22961,
+                                    "size": 24113,
                                     "node": {
                                         "name": "Java",
                                         "color": "#b07219"
@@ -2351,32 +2351,32 @@
             "languageBreakdown": [
                 {
                     "name": "Python",
-                    "percentage": 40.09,
+                    "percentage": 39.95,
                     "color": "#3572A5"
                 },
                 {
                     "name": "HTML",
-                    "percentage": 30.45,
+                    "percentage": 30.34,
                     "color": "#e34c26"
                 },
                 {
                     "name": "CSS",
-                    "percentage": 9.29,
+                    "percentage": 9.26,
                     "color": "#663399"
                 },
                 {
                     "name": "Java",
-                    "percentage": 7.23,
+                    "percentage": 7.57,
                     "color": "#b07219"
                 },
                 {
                     "name": "JavaScript",
-                    "percentage": 6.96,
+                    "percentage": 6.94,
                     "color": "#f1e05a"
                 },
                 {
                     "name": "Shell",
-                    "percentage": 5.82,
+                    "percentage": 5.79,
                     "color": "#89e051"
                 },
                 {
