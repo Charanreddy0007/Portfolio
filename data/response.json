@@ -3,25 +3,25 @@
         "allQuestionsCount": [
             {
                 "difficulty": "All",
-                "count": 4029
+                "count": 4033
             },
             {
                 "difficulty": "Easy",
-                "count": 960
+                "count": 961
             },
             {
                 "difficulty": "Medium",
-                "count": 2103
+                "count": 2105
             },
             {
                 "difficulty": "Hard",
-                "count": 966
+                "count": 967
             }
         ],
         "matchedUser": {
             "username": "Charanreddy0007",
             "contributions": {
-                "points": 314,
+                "points": 315,
                 "questionCount": 0,
                 "testcaseCount": 0
             },
