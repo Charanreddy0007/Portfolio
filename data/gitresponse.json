@@ -2158,21 +2158,21 @@
                         "languages": {
                             "edges": [
                                 {
-                                    "size": 96698,
+                                    "size": 96899,
                                     "node": {
                                         "name": "HTML",
                                         "color": "#e34c26"
                                     }
                                 },
                                 {
-                                    "size": 29496,
+                                    "size": 31148,
                                     "node": {
                                         "name": "CSS",
                                         "color": "#663399"
                                     }
                                 },
                                 {
-                                    "size": 22102,
+                                    "size": 24368,
                                     "node": {
                                         "name": "JavaScript",
                                         "color": "#f1e05a"
@@ -2336,37 +2336,37 @@
             "languageBreakdown": [
                 {
                     "name": "Python",
-                    "percentage": 39.55,
+                    "percentage": 39.05,
                     "color": "#3572A5"
                 },
                 {
                     "name": "HTML",
-                    "percentage": 30.04,
+                    "percentage": 29.72,
                     "color": "#e34c26"
                 },
                 {
                     "name": "CSS",
-                    "percentage": 9.16,
+                    "percentage": 9.55,
                     "color": "#663399"
                 },
                 {
                     "name": "Java",
-                    "percentage": 8.49,
+                    "percentage": 8.38,
                     "color": "#b07219"
                 },
                 {
                     "name": "JavaScript",
-                    "percentage": 6.87,
+                    "percentage": 7.47,
                     "color": "#f1e05a"
                 },
                 {
                     "name": "Shell",
-                    "percentage": 5.74,
+                    "percentage": 5.66,
                     "color": "#89e051"
                 },
                 {
                     "name": "C++",
-                    "percentage": 0.16,
+                    "percentage": 0.15,
                     "color": "#f34b7d"
                 }
             ]
