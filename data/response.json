@@ -21,17 +21,29 @@
         "matchedUser": {
             "username": "Charanreddy0007",
             "contributions": {
-                "points": 315,
+                "points": 316,
                 "questionCount": 0,
                 "testcaseCount": 0
             },
             "profile": {
                 "realName": "Charan Reddy",
                 "userAvatar": "https://assets.leetcode.com/users/Charan_reddy_07/avatar_1784276231.png",
-                "ranking": 2077492
+                "ranking": 2059108
             },
-            "badges": [],
-            "activeBadge": null,
+            "badges": [
+                {
+                    "id": "10694829",
+                    "displayName": "50 Days Badge 2026",
+                    "icon": "https://assets.leetcode.com/static_assets/others/50_1080_1080.png",
+                    "creationDate": "2026-08-24"
+                }
+            ],
+            "activeBadge": {
+                "id": "10694829",
+                "displayName": "50 Days Badge 2026",
+                "icon": "https://assets.leetcode.com/static_assets/others/50_1080_1080.png",
+                "creationDate": "2026-08-24"
+            },
             "submitStats": {
                 "totalSubmissionNum": [
                     {
