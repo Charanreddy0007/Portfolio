@@ -168,6 +168,8 @@ fetch("data/response.json")
     document.getElementById("profileStreak").textContent = streak + " days";
     document.getElementById("profileAcceptance").textContent = Accp + " %";
 
+    renderLeetCodeBadges(data);
+
     document.getElementById("easyCount").textContent = easyAc;
     document.getElementById("mediumCount").textContent = mediumAc;
     document.getElementById("hardCount").textContent = hardAc;
@@ -301,6 +303,100 @@ fetch("data/response.json")
     .catch(console.error);
 
 
+/* -------- Badge ----------*/
+
+function renderLeetCodeBadges(userData) {
+  const badgeContainer = document.getElementById("leetcodeBadges");
+  const badgeCount = document.getElementById("badgeCount");
+
+  if (!badgeContainer) return;
+
+  const badges = userData?.data?.matchedUser?.badges || [];
+
+  // --------------------------------
+  // BADGE PRIORITY
+  // --------------------------------
+  function getBadgePriority(badge) {
+    const name = badge.displayName.toLowerCase();
+
+    // Streak / milestone badges
+    if (name.includes("days badge")) return 100;
+
+    // Major achievement
+    if (name.includes("guardian")) return 90;
+
+    // Other badges
+    return 10;
+  }
+
+  // --------------------------------
+  // SORT BADGES
+  // --------------------------------
+  const sortedBadges = [...badges].sort((a, b) => {
+
+    const priorityA = getBadgePriority(a);
+    const priorityB = getBadgePriority(b);
+
+    if (priorityA !== priorityB) {
+      return priorityB - priorityA;
+    }
+
+    return new Date(b.creationDate) - new Date(a.creationDate);
+  });
+
+  // --------------------------------
+  // TOP 4 ONLY
+  // --------------------------------
+  const latestBadges = sortedBadges.slice(0, 8);
+
+  // Total badge count
+  if (badgeCount) {
+    badgeCount.textContent = badges.length;
+  }
+
+  badgeContainer.innerHTML = "";
+
+  if (latestBadges.length === 0) {
+    badgeContainer.innerHTML = `
+      <span class="mono" style="
+        font-size:10px;
+        color:var(--text-dim);
+      ">
+        No badges yet
+      </span>
+    `;
+    return;
+  }
+
+  // --------------------------------
+  // DISPLAY BADGES
+  // --------------------------------
+  latestBadges.forEach((badge) => {
+
+    // Handle both full URLs and /static/... URLs
+    const iconUrl = badge.icon.startsWith("http")
+      ? badge.icon
+      : `https://leetcode.com${badge.icon}`;
+
+    const badgeElement = document.createElement("div");
+
+    badgeElement.className = "leetcode-badge";
+
+    badgeElement.innerHTML = `
+      <img
+        src="${iconUrl}"
+        alt="${badge.displayName}"
+        loading="lazy"
+      >
+
+      <span class="leetcode-badge-name">
+        ${badge.displayName}
+      </span>
+    `;
+
+    badgeContainer.appendChild(badgeElement);
+  });
+}
 
 /* --------- GitHub ---------*/
 
