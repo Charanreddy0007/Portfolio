@@ -83,8 +83,8 @@ jobs:
       # ---------------------------------------------------------
       - name: Copy leetcodeResponse.json
         run: |
-          cp data/leetcodeResponse.json \
-             second-repo/data/leetcodeResponse.json
+          cp data/LeetcodeResponse.json \
+             second-repo/data/LeetcodeResponse.json
 
       # ---------------------------------------------------------
       # Commit ONLY leetcodeResponse.json
