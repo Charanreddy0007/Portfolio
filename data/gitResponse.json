@@ -2219,9 +2219,20 @@
                         "url": "https://github.com/Charanreddy0007/Charanreddy0007",
                         "stargazerCount": 0,
                         "forkCount": 0,
-                        "primaryLanguage": null,
+                        "primaryLanguage": {
+                            "name": "Python",
+                            "color": "#3572A5"
+                        },
                         "languages": {
-                            "edges": []
+                            "edges": [
+                                {
+                                    "size": 29707,
+                                    "node": {
+                                        "name": "Python",
+                                        "color": "#3572A5"
+                                    }
+                                }
+                            ]
                         }
                     },
                     {
@@ -2361,37 +2372,37 @@
             "languageBreakdown": [
                 {
                     "name": "Python",
-                    "percentage": 38.53,
+                    "percentage": 43.6,
                     "color": "#3572A5"
                 },
                 {
                     "name": "HTML",
-                    "percentage": 29.38,
+                    "percentage": 26.96,
                     "color": "#e34c26"
                 },
                 {
                     "name": "Java",
-                    "percentage": 9.55,
+                    "percentage": 8.76,
                     "color": "#b07219"
                 },
                 {
                     "name": "CSS",
-                    "percentage": 9.43,
+                    "percentage": 8.65,
                     "color": "#663399"
                 },
                 {
                     "name": "JavaScript",
-                    "percentage": 7.37,
+                    "percentage": 6.77,
                     "color": "#f1e05a"
                 },
                 {
                     "name": "Shell",
-                    "percentage": 5.59,
+                    "percentage": 5.13,
                     "color": "#89e051"
                 },
                 {
                     "name": "C++",
-                    "percentage": 0.15,
+                    "percentage": 0.14,
                     "color": "#f34b7d"
                 }
             ]
