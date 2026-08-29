@@ -2197,14 +2197,14 @@
                                     }
                                 },
                                 {
-                                    "size": 24368,
+                                    "size": 24417,
                                     "node": {
                                         "name": "JavaScript",
                                         "color": "#f1e05a"
                                     }
                                 },
                                 {
-                                    "size": 8826,
+                                    "size": 8833,
                                     "node": {
                                         "name": "Python",
                                         "color": "#3572A5"
@@ -2372,7 +2372,7 @@
             "languageBreakdown": [
                 {
                     "name": "Python",
-                    "percentage": 43.6,
+                    "percentage": 43.59,
                     "color": "#3572A5"
                 },
                 {
@@ -2392,7 +2392,7 @@
                 },
                 {
                     "name": "JavaScript",
-                    "percentage": 6.77,
+                    "percentage": 6.78,
                     "color": "#f1e05a"
                 },
                 {
