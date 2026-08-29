@@ -15,14 +15,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ---------------------------------------------------------
+      # Checkout Portfolio repository
+      # ---------------------------------------------------------
       - name: Checkout Portfolio repository
         uses: actions/checkout@v4
 
+      # ---------------------------------------------------------
+      # Set up Python
+      # ---------------------------------------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
+      # ---------------------------------------------------------
+      # Install dependencies
+      # ---------------------------------------------------------
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -31,6 +40,10 @@ jobs:
             pip install -r python-script/requirements.txt
           fi
 
+      # ---------------------------------------------------------
+      # Run Python Script
+      # Uses Token 1: TOKENGITHUB
+      # ---------------------------------------------------------
       - name: Run Python Script
         env:
           TOKENGITHUB: ${{ secrets.TOKENGITHUB }}
@@ -51,25 +64,32 @@ jobs:
             echo "No Portfolio changes detected."
           else
             git commit -m "Auto-update portfolio JSON"
-            git push
+            git push origin main
           fi
 
       # ---------------------------------------------------------
-      # Update leetcodeResponse.json in second repository
+      # Checkout Profile README repository
+      # Uses Token 2: PROFILE_REPO_TOKEN
       # ---------------------------------------------------------
-      - name: Checkout second repository
-        if: success()
+      - name: Checkout profile repository
         uses: actions/checkout@v4
         with:
           repository: Charanreddy0007/Charanreddy0007
-          token: ${{ secrets.TOKENGITHUB }}
+          token: ${{ secrets.PROFILE_REPO_TOKEN }}
           path: second-repo
 
-      - name: Copy leetcodeResponse.json to second repository
+      # ---------------------------------------------------------
+      # Copy ONLY leetcodeResponse.json
+      # ---------------------------------------------------------
+      - name: Copy leetcodeResponse.json
         run: |
-          cp data/leetcodeResponse.json second-repo/data/leetcodeResponse.json
+          cp data/leetcodeResponse.json \
+             second-repo/data/leetcodeResponse.json
 
-      - name: Commit leetcodeResponse.json to second repository
+      # ---------------------------------------------------------
+      # Commit ONLY leetcodeResponse.json
+      # ---------------------------------------------------------
+      - name: Commit leetcodeResponse.json to profile repository
         working-directory: second-repo
         run: |
           git config user.name "github-actions[bot]"
@@ -81,5 +101,5 @@ jobs:
             echo "No leetcodeResponse.json changes detected."
           else
             git commit -m "Auto-update leetcodeResponse.json"
-            git push
+            git push origin main
           fi
