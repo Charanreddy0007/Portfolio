@@ -422,7 +422,7 @@ function setRepo(repo, card) {
 }
 
 
-fetch("data/gitresponse.json")
+fetch("data/gitResponse.json")
     .then(response => response.json())
     .then(data => {
 
@@ -442,7 +442,7 @@ fetch("data/gitresponse.json")
     .catch(console.error);
 
 
-fetch("data/gitresponse.json")
+fetch("data/gitResponse.json")
   .then(response => response.json())
   .then(data => {
 
@@ -496,7 +496,7 @@ fetch("data/gitresponse.json")
   });
 
 
-fetch("data/gitresponse.json")
+fetch("data/gitResponse.json")
     .then(response => response.json())
     .then(data => {
 

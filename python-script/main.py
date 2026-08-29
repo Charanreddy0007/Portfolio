@@ -14,7 +14,7 @@ DATA_DIR = ROOT / "data"
 DATA_DIR.mkdir(exist_ok=True)
 
 response_file = DATA_DIR / "response.json"
-gitresponse_file = DATA_DIR / "gitresponse.json"
+gitresponse_file = DATA_DIR / "gitResponse.json"
 svg_file = DATA_DIR / "github_heatmap.svg"
 
 load_dotenv()
