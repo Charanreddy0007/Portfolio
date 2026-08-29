@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
   schedule:
-    # Every hour
-    - cron: "* */6 * * *"
+    # Every 6 hours
+    - cron: "0 */6 * * *"
 
 permissions:
   contents: write
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Portfolio repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -37,16 +37,49 @@ jobs:
         run: |
           python python-script/main.py
 
-      - name: Commit updated JSON files
+      # ---------------------------------------------------------
+      # Commit changes to Portfolio repository
+      # ---------------------------------------------------------
+      - name: Commit updated Portfolio JSON files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/.
+          git add data/
 
           if git diff --cached --quiet; then
-            echo "No changes detected."
+            echo "No Portfolio changes detected."
           else
             git commit -m "Auto-update portfolio JSON"
+            git push
+          fi
+
+      # ---------------------------------------------------------
+      # Update leetcodeResponse.json in second repository
+      # ---------------------------------------------------------
+      - name: Checkout second repository
+        if: success()
+        uses: actions/checkout@v4
+        with:
+          repository: Charanreddy0007/Charanreddy0007
+          token: ${{ secrets.TOKENGITHUB }}
+          path: second-repo
+
+      - name: Copy leetcodeResponse.json to second repository
+        run: |
+          cp data/leetcodeResponse.json second-repo/data/leetcodeResponse.json
+
+      - name: Commit leetcodeResponse.json to second repository
+        working-directory: second-repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/leetcodeResponse.json
+
+          if git diff --cached --quiet; then
+            echo "No leetcodeResponse.json changes detected."
+          else
+            git commit -m "Auto-update leetcodeResponse.json"
             git push
           fi
