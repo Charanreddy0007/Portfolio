@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 DATA_DIR.mkdir(exist_ok=True)
 
-response_file = DATA_DIR / "response.json"
+response_file = DATA_DIR / "LeecodeResponse.json"
 gitresponse_file = DATA_DIR / "gitResponse.json"
 svg_file = DATA_DIR / "github_heatmap.svg"
 
