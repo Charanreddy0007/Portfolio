@@ -79,27 +79,27 @@ jobs:
           path: second-repo
 
       # ---------------------------------------------------------
-      # Copy ONLY leetcodeResponse.json
+      # Copy ONLY LeetcodeResponse.json
       # ---------------------------------------------------------
-      - name: Copy leetcodeResponse.json
+      - name: Copy LeetcodeResponse.json
         run: |
           cp data/LeetcodeResponse.json \
              second-repo/data/LeetcodeResponse.json
 
       # ---------------------------------------------------------
-      # Commit ONLY leetcodeResponse.json
+      # Commit ONLY LeetcodeResponse.json
       # ---------------------------------------------------------
-      - name: Commit leetcodeResponse.json to profile repository
+      - name: Commit LeetcodeResponse.json to profile repository
         working-directory: second-repo
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/leetcodeResponse.json
+          git add data/LeetcodeResponse.json
 
           if git diff --cached --quiet; then
-            echo "No leetcodeResponse.json changes detected."
+            echo "No LeetcodeResponse.json changes detected."
           else
-            git commit -m "Auto-update leetcodeResponse.json"
+            git commit -m "Auto-update LeetcodeResponse.json"
             git push origin main
           fi
