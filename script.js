@@ -131,7 +131,7 @@ runTerminal();
 /* ---------- Dificulty --------- */
 
 fetch("data/LeetcodeResponse.json")
-  .then(response => LeetcodeResponse.json())
+  .then(response => response.json())
   .then(data => {
 
     const rank = data.data.matchedUser.profile.ranking;
@@ -290,7 +290,7 @@ function buildHeatmap(id, calendar) {
 }
 
 fetch("data/LeetcodeResponse.json")
-    .then(response => LeetcodeResponse.json())
+    .then(response => response.json())
     .then(data => {
 
         const calendar = JSON.parse(
@@ -423,7 +423,7 @@ function setRepo(repo, card) {
 
 
 fetch("data/gitResponse.json")
-    .then(response => LeetcodeResponse.json())
+    .then(response => response.json())
     .then(data => {
 
         const repos = data.data.user.topRepositories.nodes;
@@ -443,7 +443,7 @@ fetch("data/gitResponse.json")
 
 
 fetch("data/gitResponse.json")
-  .then(response => LeetcodeResponse.json())
+  .then(response => response.json())
   .then(data => {
 
     const totalRepoCount = data.data.user.repoCount.totalCount;
@@ -497,7 +497,7 @@ fetch("data/gitResponse.json")
 
 
 fetch("data/gitResponse.json")
-    .then(response => LeetcodeResponse.json())
+    .then(response => response.json())
     .then(data => {
 
         console.log(data);
