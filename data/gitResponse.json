@@ -16,7 +16,7 @@
             },
             "contributionsCollection": {
                 "contributionCalendar": {
-                    "totalContributions": 351,
+                    "totalContributions": 382,
                     "weeks": [
                         {
                             "contributionDays": [
@@ -1140,7 +1140,7 @@
                                 {
                                     "date": "2026-03-20",
                                     "contributionCount": 9,
-                                    "contributionLevel": "SECOND_QUARTILE"
+                                    "contributionLevel": "FIRST_QUARTILE"
                                 },
                                 {
                                     "date": "2026-03-21",
@@ -1164,7 +1164,7 @@
                                 {
                                     "date": "2026-03-24",
                                     "contributionCount": 9,
-                                    "contributionLevel": "SECOND_QUARTILE"
+                                    "contributionLevel": "FIRST_QUARTILE"
                                 },
                                 {
                                     "date": "2026-03-25",
@@ -1788,12 +1788,12 @@
                                 {
                                     "date": "2026-07-14",
                                     "contributionCount": 31,
-                                    "contributionLevel": "FOURTH_QUARTILE"
+                                    "contributionLevel": "THIRD_QUARTILE"
                                 },
                                 {
                                     "date": "2026-07-15",
                                     "contributionCount": 20,
-                                    "contributionLevel": "THIRD_QUARTILE"
+                                    "contributionLevel": "SECOND_QUARTILE"
                                 },
                                 {
                                     "date": "2026-07-16",
@@ -1808,7 +1808,7 @@
                                 {
                                     "date": "2026-07-18",
                                     "contributionCount": 10,
-                                    "contributionLevel": "SECOND_QUARTILE"
+                                    "contributionLevel": "FIRST_QUARTILE"
                                 }
                             ]
                         },
@@ -1894,8 +1894,8 @@
                             "contributionDays": [
                                 {
                                     "date": "2026-08-02",
-                                    "contributionCount": 17,
-                                    "contributionLevel": "SECOND_QUARTILE"
+                                    "contributionCount": 26,
+                                    "contributionLevel": "THIRD_QUARTILE"
                                 },
                                 {
                                     "date": "2026-08-03",
@@ -1933,7 +1933,7 @@
                             "contributionDays": [
                                 {
                                     "date": "2026-08-09",
-                                    "contributionCount": 8,
+                                    "contributionCount": 9,
                                     "contributionLevel": "FIRST_QUARTILE"
                                 },
                                 {
@@ -1958,8 +1958,8 @@
                                 },
                                 {
                                     "date": "2026-08-14",
-                                    "contributionCount": 7,
-                                    "contributionLevel": "FIRST_QUARTILE"
+                                    "contributionCount": 12,
+                                    "contributionLevel": "SECOND_QUARTILE"
                                 },
                                 {
                                     "date": "2026-08-15",
@@ -1987,12 +1987,12 @@
                                 },
                                 {
                                     "date": "2026-08-19",
-                                    "contributionCount": 4,
+                                    "contributionCount": 5,
                                     "contributionLevel": "FIRST_QUARTILE"
                                 },
                                 {
                                     "date": "2026-08-20",
-                                    "contributionCount": 4,
+                                    "contributionCount": 5,
                                     "contributionLevel": "FIRST_QUARTILE"
                                 },
                                 {
@@ -2016,7 +2016,7 @@
                                 },
                                 {
                                     "date": "2026-08-24",
-                                    "contributionCount": 3,
+                                    "contributionCount": 4,
                                     "contributionLevel": "FIRST_QUARTILE"
                                 },
                                 {
@@ -2031,7 +2031,7 @@
                                 },
                                 {
                                     "date": "2026-08-27",
-                                    "contributionCount": 2,
+                                    "contributionCount": 3,
                                     "contributionLevel": "FIRST_QUARTILE"
                                 },
                                 {
@@ -2041,7 +2041,7 @@
                                 },
                                 {
                                     "date": "2026-08-29",
-                                    "contributionCount": 34,
+                                    "contributionCount": 43,
                                     "contributionLevel": "FOURTH_QUARTILE"
                                 }
                             ]
@@ -2050,13 +2050,18 @@
                             "contributionDays": [
                                 {
                                     "date": "2026-08-30",
-                                    "contributionCount": 4,
+                                    "contributionCount": 5,
                                     "contributionLevel": "FIRST_QUARTILE"
                                 },
                                 {
                                     "date": "2026-08-31",
-                                    "contributionCount": 0,
-                                    "contributionLevel": "NONE"
+                                    "contributionCount": 1,
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "date": "2026-09-01",
+                                    "contributionCount": 1,
+                                    "contributionLevel": "FIRST_QUARTILE"
                                 }
                             ]
                         }
@@ -2100,7 +2105,7 @@
                         "languages": {
                             "edges": [
                                 {
-                                    "size": 33268,
+                                    "size": 33861,
                                     "node": {
                                         "name": "Java",
                                         "color": "#b07219"
@@ -2136,7 +2141,7 @@
                         "languages": {
                             "edges": [
                                 {
-                                    "size": 65573,
+                                    "size": 70542,
                                     "node": {
                                         "name": "Python",
                                         "color": "#3572A5"
@@ -2150,7 +2155,7 @@
                         "description": null,
                         "url": "https://github.com/Charanreddy0007/Portfolio",
                         "stargazerCount": 0,
-                        "forkCount": 0,
+                        "forkCount": 1,
                         "primaryLanguage": {
                             "name": "HTML",
                             "color": "#e34c26"
@@ -2347,32 +2352,32 @@
             "languageBreakdown": [
                 {
                     "name": "Python",
-                    "percentage": 43.39,
+                    "percentage": 44.09,
                     "color": "#3572A5"
                 },
                 {
                     "name": "HTML",
-                    "percentage": 26.83,
+                    "percentage": 26.42,
                     "color": "#e34c26"
                 },
                 {
                     "name": "Java",
-                    "percentage": 9.19,
+                    "percentage": 9.21,
                     "color": "#b07219"
                 },
                 {
                     "name": "CSS",
-                    "percentage": 8.61,
+                    "percentage": 8.48,
                     "color": "#663399"
                 },
                 {
                     "name": "JavaScript",
-                    "percentage": 6.74,
+                    "percentage": 6.64,
                     "color": "#f1e05a"
                 },
                 {
                     "name": "Shell",
-                    "percentage": 5.1,
+                    "percentage": 5.03,
                     "color": "#89e051"
                 },
                 {
