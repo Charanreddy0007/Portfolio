@@ -12,11 +12,11 @@
                 "totalCount": 1
             },
             "repoCount": {
-                "totalCount": 12
+                "totalCount": 10
             },
             "contributionsCollection": {
                 "contributionCalendar": {
-                    "totalContributions": 397,
+                    "totalContributions": 392,
                     "weeks": [
                         {
                             "contributionDays": [
@@ -1885,7 +1885,7 @@
                                 },
                                 {
                                     "date": "2026-08-08",
-                                    "contributionCount": 3,
+                                    "contributionCount": 2,
                                     "contributionLevel": "FIRST_QUARTILE"
                                 }
                             ]
@@ -2036,12 +2036,12 @@
                                 },
                                 {
                                     "date": "2026-09-04",
-                                    "contributionCount": 4,
+                                    "contributionCount": 2,
                                     "contributionLevel": "FIRST_QUARTILE"
                                 },
                                 {
                                     "date": "2026-09-05",
-                                    "contributionCount": 6,
+                                    "contributionCount": 3,
                                     "contributionLevel": "FIRST_QUARTILE"
                                 }
                             ]
@@ -2050,8 +2050,8 @@
                             "contributionDays": [
                                 {
                                     "date": "2026-09-06",
-                                    "contributionCount": 0,
-                                    "contributionLevel": "NONE"
+                                    "contributionCount": 1,
+                                    "contributionLevel": "FIRST_QUARTILE"
                                 }
                             ]
                         }
@@ -2119,71 +2119,6 @@
                         }
                     },
                     {
-                        "name": "FinTrace",
-                        "description": null,
-                        "url": "https://github.com/Charanreddy0007/FinTrace",
-                        "stargazerCount": 0,
-                        "forkCount": 0,
-                        "primaryLanguage": {
-                            "name": "TypeScript",
-                            "color": "#3178c6"
-                        },
-                        "languages": {
-                            "edges": [
-                                {
-                                    "size": 138841,
-                                    "node": {
-                                        "name": "TypeScript",
-                                        "color": "#3178c6"
-                                    }
-                                },
-                                {
-                                    "size": 81130,
-                                    "node": {
-                                        "name": "Python",
-                                        "color": "#3572A5"
-                                    }
-                                },
-                                {
-                                    "size": 1554,
-                                    "node": {
-                                        "name": "CSS",
-                                        "color": "#663399"
-                                    }
-                                },
-                                {
-                                    "size": 722,
-                                    "node": {
-                                        "name": "HTML",
-                                        "color": "#e34c26"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "name": "developer-portfolios",
-                        "description": "A list of developer portfolios for your inspiration",
-                        "url": "https://github.com/Charanreddy0007/developer-portfolios",
-                        "stargazerCount": 0,
-                        "forkCount": 0,
-                        "primaryLanguage": {
-                            "name": "Python",
-                            "color": "#3572A5"
-                        },
-                        "languages": {
-                            "edges": [
-                                {
-                                    "size": 70542,
-                                    "node": {
-                                        "name": "Python",
-                                        "color": "#3572A5"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    {
                         "name": "Portfolio",
                         "description": null,
                         "url": "https://github.com/Charanreddy0007/Portfolio",
@@ -2196,7 +2131,7 @@
                         "languages": {
                             "edges": [
                                 {
-                                    "size": 97100,
+                                    "size": 97308,
                                     "node": {
                                         "name": "HTML",
                                         "color": "#e34c26"
@@ -2384,43 +2319,38 @@
             },
             "languageBreakdown": [
                 {
-                    "name": "Python",
-                    "percentage": 41.07,
-                    "color": "#3572A5"
-                },
-                {
-                    "name": "TypeScript",
-                    "percentage": 23.45,
-                    "color": "#3178c6"
-                },
-                {
                     "name": "HTML",
-                    "percentage": 16.52,
+                    "percentage": 32.5,
                     "color": "#e34c26"
                 },
                 {
+                    "name": "Python",
+                    "percentage": 30.55,
+                    "color": "#3572A5"
+                },
+                {
                     "name": "Java",
-                    "percentage": 6.05,
+                    "percentage": 11.97,
                     "color": "#b07219"
                 },
                 {
                     "name": "CSS",
-                    "percentage": 5.52,
+                    "percentage": 10.4,
                     "color": "#663399"
                 },
                 {
                     "name": "JavaScript",
-                    "percentage": 4.12,
+                    "percentage": 8.14,
                     "color": "#f1e05a"
                 },
                 {
                     "name": "Shell",
-                    "percentage": 3.12,
+                    "percentage": 6.17,
                     "color": "#89e051"
                 },
                 {
                     "name": "C++",
-                    "percentage": 0.14,
+                    "percentage": 0.27,
                     "color": "#f34b7d"
                 }
             ]
