@@ -16,7 +16,7 @@
             },
             "contributionsCollection": {
                 "contributionCalendar": {
-                    "totalContributions": 405,
+                    "totalContributions": 407,
                     "weeks": [
                         {
                             "contributionDays": [
@@ -2070,8 +2070,8 @@
                                 },
                                 {
                                     "date": "2026-09-10",
-                                    "contributionCount": 0,
-                                    "contributionLevel": "NONE"
+                                    "contributionCount": 2,
+                                    "contributionLevel": "FIRST_QUARTILE"
                                 }
                             ]
                         }
@@ -2115,24 +2115,38 @@
                         "languages": {
                             "edges": [
                                 {
-                                    "size": 37486,
+                                    "size": 37791,
                                     "node": {
                                         "name": "Java",
                                         "color": "#b07219"
                                     }
                                 },
                                 {
-                                    "size": 4702,
+                                    "size": 4962,
                                     "node": {
                                         "name": "Python",
                                         "color": "#3572A5"
                                     }
                                 },
                                 {
-                                    "size": 800,
+                                    "size": 1140,
                                     "node": {
                                         "name": "C++",
                                         "color": "#f34b7d"
+                                    }
+                                },
+                                {
+                                    "size": 361,
+                                    "node": {
+                                        "name": "JavaScript",
+                                        "color": "#f1e05a"
+                                    }
+                                },
+                                {
+                                    "size": 325,
+                                    "node": {
+                                        "name": "TypeScript",
+                                        "color": "#3178c6"
                                     }
                                 }
                             ]
@@ -2340,38 +2354,43 @@
             "languageBreakdown": [
                 {
                     "name": "HTML",
-                    "percentage": 31.89,
+                    "percentage": 31.72,
                     "color": "#e34c26"
                 },
                 {
                     "name": "Python",
-                    "percentage": 31.32,
+                    "percentage": 31.24,
                     "color": "#3572A5"
                 },
                 {
                     "name": "Java",
-                    "percentage": 12.28,
+                    "percentage": 12.32,
                     "color": "#b07219"
                 },
                 {
                     "name": "CSS",
-                    "percentage": 10.21,
+                    "percentage": 10.15,
                     "color": "#663399"
                 },
                 {
                     "name": "JavaScript",
-                    "percentage": 7.99,
+                    "percentage": 8.07,
                     "color": "#f1e05a"
                 },
                 {
                     "name": "Shell",
-                    "percentage": 6.05,
+                    "percentage": 6.02,
                     "color": "#89e051"
                 },
                 {
                     "name": "C++",
-                    "percentage": 0.26,
+                    "percentage": 0.37,
                     "color": "#f34b7d"
+                },
+                {
+                    "name": "TypeScript",
+                    "percentage": 0.11,
+                    "color": "#3178c6"
                 }
             ]
         },
