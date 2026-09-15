@@ -6,7 +6,7 @@
             "avatarUrl": "https://avatars.githubusercontent.com/u/135025143?u=101d6a5836a7572020bc707be768c59118ff2e59&v=4",
             "bio": "CSE student | Cybersecurity & Digital Forensics | Skilled in Python & Java | Exploring tech and innovation",
             "followers": {
-                "totalCount": 3
+                "totalCount": 5
             },
             "following": {
                 "totalCount": 1
@@ -16,7 +16,7 @@
             },
             "contributionsCollection": {
                 "contributionCalendar": {
-                    "totalContributions": 427,
+                    "totalContributions": 430,
                     "weeks": [
                         {
                             "contributionDays": [
@@ -2060,8 +2060,8 @@
                                 },
                                 {
                                     "date": "2026-09-15",
-                                    "contributionCount": 0,
-                                    "contributionLevel": "NONE"
+                                    "contributionCount": 3,
+                                    "contributionLevel": "FIRST_QUARTILE"
                                 }
                             ]
                         }
@@ -2105,7 +2105,7 @@
                         "languages": {
                             "edges": [
                                 {
-                                    "size": 39629,
+                                    "size": 40114,
                                     "node": {
                                         "name": "Java",
                                         "color": "#b07219"
@@ -2366,32 +2366,32 @@
             "languageBreakdown": [
                 {
                     "name": "Python",
-                    "percentage": 31.86,
+                    "percentage": 31.81,
                     "color": "#3572A5"
                 },
                 {
                     "name": "HTML",
-                    "percentage": 30.38,
+                    "percentage": 30.34,
                     "color": "#e34c26"
                 },
                 {
                     "name": "Java",
-                    "percentage": 12.37,
+                    "percentage": 12.51,
                     "color": "#b07219"
                 },
                 {
                     "name": "CSS",
-                    "percentage": 9.73,
+                    "percentage": 9.71,
                     "color": "#663399"
                 },
                 {
                     "name": "JavaScript",
-                    "percentage": 8.21,
+                    "percentage": 8.2,
                     "color": "#f1e05a"
                 },
                 {
                     "name": "Shell",
-                    "percentage": 5.77,
+                    "percentage": 5.76,
                     "color": "#89e051"
                 },
                 {
