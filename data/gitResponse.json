@@ -12,11 +12,11 @@
                 "totalCount": 1
             },
             "repoCount": {
-                "totalCount": 11
+                "totalCount": 12
             },
             "contributionsCollection": {
                 "contributionCalendar": {
-                    "totalContributions": 430,
+                    "totalContributions": 433,
                     "weeks": [
                         {
                             "contributionDays": [
@@ -2062,6 +2062,11 @@
                                     "date": "2026-09-15",
                                     "contributionCount": 3,
                                     "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "date": "2026-09-16",
+                                    "contributionCount": 3,
+                                    "contributionLevel": "FIRST_QUARTILE"
                                 }
                             ]
                         }
@@ -2137,6 +2142,28 @@
                                     "node": {
                                         "name": "TypeScript",
                                         "color": "#3178c6"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "student-management-performance-analysis",
+                        "description": null,
+                        "url": "https://github.com/Charanreddy0007/student-management-performance-analysis",
+                        "stargazerCount": 0,
+                        "forkCount": 0,
+                        "primaryLanguage": {
+                            "name": "Java",
+                            "color": "#b07219"
+                        },
+                        "languages": {
+                            "edges": [
+                                {
+                                    "size": 115232,
+                                    "node": {
+                                        "name": "Java",
+                                        "color": "#b07219"
                                     }
                                 }
                             ]
@@ -2365,43 +2392,43 @@
             },
             "languageBreakdown": [
                 {
+                    "name": "Java",
+                    "percentage": 35.63,
+                    "color": "#b07219"
+                },
+                {
                     "name": "Python",
-                    "percentage": 31.81,
+                    "percentage": 23.4,
                     "color": "#3572A5"
                 },
                 {
                     "name": "HTML",
-                    "percentage": 30.34,
+                    "percentage": 22.32,
                     "color": "#e34c26"
                 },
                 {
-                    "name": "Java",
-                    "percentage": 12.51,
-                    "color": "#b07219"
-                },
-                {
                     "name": "CSS",
-                    "percentage": 9.71,
+                    "percentage": 7.14,
                     "color": "#663399"
                 },
                 {
                     "name": "JavaScript",
-                    "percentage": 8.2,
+                    "percentage": 6.03,
                     "color": "#f1e05a"
                 },
                 {
                     "name": "Shell",
-                    "percentage": 5.76,
+                    "percentage": 4.24,
                     "color": "#89e051"
                 },
                 {
                     "name": "C++",
-                    "percentage": 1.09,
+                    "percentage": 0.8,
                     "color": "#f34b7d"
                 },
                 {
                     "name": "TypeScript",
-                    "percentage": 0.59,
+                    "percentage": 0.44,
                     "color": "#3178c6"
                 }
             ]
