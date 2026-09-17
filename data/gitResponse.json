@@ -12,11 +12,11 @@
                 "totalCount": 1
             },
             "repoCount": {
-                "totalCount": 13
+                "totalCount": 14
             },
             "contributionsCollection": {
                 "contributionCalendar": {
-                    "totalContributions": 441,
+                    "totalContributions": 450,
                     "weeks": [
                         {
                             "contributionDays": [
@@ -2072,6 +2072,11 @@
                                     "date": "2026-09-17",
                                     "contributionCount": 1,
                                     "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "date": "2026-09-18",
+                                    "contributionCount": 9,
+                                    "contributionLevel": "FIRST_QUARTILE"
                                 }
                             ]
                         }
@@ -2147,6 +2152,28 @@
                                     "node": {
                                         "name": "TypeScript",
                                         "color": "#3178c6"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "ProfileCounter",
+                        "description": null,
+                        "url": "https://github.com/Charanreddy0007/ProfileCounter",
+                        "stargazerCount": 0,
+                        "forkCount": 0,
+                        "primaryLanguage": {
+                            "name": "Python",
+                            "color": "#3572A5"
+                        },
+                        "languages": {
+                            "edges": [
+                                {
+                                    "size": 1904,
+                                    "node": {
+                                        "name": "Python",
+                                        "color": "#3572A5"
                                     }
                                 }
                             ]
@@ -2420,32 +2447,32 @@
             "languageBreakdown": [
                 {
                     "name": "Java",
-                    "percentage": 37.02,
+                    "percentage": 36.87,
                     "color": "#b07219"
                 },
                 {
                     "name": "Python",
-                    "percentage": 22.84,
+                    "percentage": 23.16,
                     "color": "#3572A5"
                 },
                 {
                     "name": "HTML",
-                    "percentage": 21.66,
+                    "percentage": 21.57,
                     "color": "#e34c26"
                 },
                 {
                     "name": "CSS",
-                    "percentage": 6.93,
+                    "percentage": 6.9,
                     "color": "#663399"
                 },
                 {
                     "name": "JavaScript",
-                    "percentage": 5.98,
+                    "percentage": 5.95,
                     "color": "#f1e05a"
                 },
                 {
                     "name": "Shell",
-                    "percentage": 4.11,
+                    "percentage": 4.09,
                     "color": "#89e051"
                 },
                 {
