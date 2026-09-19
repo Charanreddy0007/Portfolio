@@ -21,45 +21,6 @@
                         {
                             "contributionDays": [
                                 {
-                                    "date": "2025-09-14",
-                                    "contributionCount": 0,
-                                    "contributionLevel": "NONE"
-                                },
-                                {
-                                    "date": "2025-09-15",
-                                    "contributionCount": 0,
-                                    "contributionLevel": "NONE"
-                                },
-                                {
-                                    "date": "2025-09-16",
-                                    "contributionCount": 0,
-                                    "contributionLevel": "NONE"
-                                },
-                                {
-                                    "date": "2025-09-17",
-                                    "contributionCount": 0,
-                                    "contributionLevel": "NONE"
-                                },
-                                {
-                                    "date": "2025-09-18",
-                                    "contributionCount": 0,
-                                    "contributionLevel": "NONE"
-                                },
-                                {
-                                    "date": "2025-09-19",
-                                    "contributionCount": 0,
-                                    "contributionLevel": "NONE"
-                                },
-                                {
-                                    "date": "2025-09-20",
-                                    "contributionCount": 0,
-                                    "contributionLevel": "NONE"
-                                }
-                            ]
-                        },
-                        {
-                            "contributionDays": [
-                                {
                                     "date": "2025-09-21",
                                     "contributionCount": 0,
                                     "contributionLevel": "NONE"
@@ -2082,6 +2043,15 @@
                                     "date": "2026-09-19",
                                     "contributionCount": 7,
                                     "contributionLevel": "FIRST_QUARTILE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "date": "2026-09-20",
+                                    "contributionCount": 0,
+                                    "contributionLevel": "NONE"
                                 }
                             ]
                         }
