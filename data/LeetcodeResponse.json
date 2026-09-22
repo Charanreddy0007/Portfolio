@@ -3,7 +3,7 @@
         "allQuestionsCount": [
             {
                 "difficulty": "All",
-                "count": 4059
+                "count": 4060
             },
             {
                 "difficulty": "Easy",
@@ -15,13 +15,13 @@
             },
             {
                 "difficulty": "Hard",
-                "count": 976
+                "count": 977
             }
         ],
         "matchedUser": {
             "username": "Charanreddy0007",
             "contributions": {
-                "points": 433,
+                "points": 434,
                 "questionCount": 0,
                 "testcaseCount": 0
             },
